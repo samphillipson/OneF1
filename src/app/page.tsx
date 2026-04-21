@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import Dashboard from "@/components/Dashboard";
 import Chatbot from "@/components/Chatbot";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
         <nav className={styles.nav}>
           <a href="#dashboard" className={styles.navLink}>Dashboard</a>
           <a href="#chat" className={styles.navLink}>AI Chat</a>
-          <a href="/api/auth/signin" className={styles.loginBtn}>Login</a>
+          <Link href="/login" className={styles.loginBtn}>Login</Link>
         </nav>
       </header>
       
