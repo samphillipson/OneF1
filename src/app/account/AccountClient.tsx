@@ -19,12 +19,43 @@ export default function AccountClient({ user }: AccountClientProps) {
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [newEmail, setNewEmail] = useState('');
+  const [newUsername, setNewUsername] = useState((user as any).username || '');
   const [emailPassword, setEmailPassword] = useState('');
   
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+
+  const handleUsernameSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError('');
+    setSuccess('');
+
+    try {
+      const res = await fetch('/api/user/username', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ newUsername }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || 'Failed to update username');
+      } else {
+        setSuccess('Username updated successfully! Refreshing...');
+        setTimeout(() => {
+          router.refresh();
+        }, 2000);
+      }
+    } catch (err: any) {
+      setError('An unexpected error occurred');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const handlePasswordSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -107,7 +138,32 @@ export default function AccountClient({ user }: AccountClientProps) {
         {error && <div className={styles.error}>{error}</div>}
         {success && <div className={styles.success}>{success}</div>}
 
-        <div className={styles.divider}>Change Email</div>
+        <div className={styles.divider}>Change Username</div>
+
+        <form className={styles.form} onSubmit={handleUsernameSubmit}>
+          <div className={styles.inputGroup}>
+            <label className={styles.label} htmlFor="newUsername">New Username</label>
+            <input
+              id="newUsername"
+              type="text"
+              className={styles.input}
+              placeholder="f1fan123"
+              value={newUsername}
+              onChange={(e) => setNewUsername(e.target.value)}
+              required
+            />
+          </div>
+
+          <button 
+            type="submit" 
+            className={styles.button}
+            disabled={isLoading}
+          >
+            {isLoading ? 'Updating...' : 'Update Username'}
+          </button>
+        </form>
+
+        <div className={styles.divider} style={{ marginTop: '2rem' }}>Change Email</div>
 
         <form className={styles.form} onSubmit={handleEmailSubmit}>
           <div className={styles.inputGroup}>

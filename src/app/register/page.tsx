@@ -8,6 +8,7 @@ import { ArrowLeft } from 'lucide-react';
 
 export default function RegisterPage() {
   const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -24,7 +25,7 @@ export default function RegisterPage() {
       const res = await fetch('/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, password, username }),
       });
 
       const data = await res.json();
@@ -35,6 +36,7 @@ export default function RegisterPage() {
 
       setSuccess(data.message || 'Account created! Please check your email to verify your account.');
       setEmail('');
+      setUsername('');
       setPassword('');
     } catch (err: any) {
       setError(err.message);
@@ -59,6 +61,18 @@ export default function RegisterPage() {
         {success && <div className={styles.success}>{success}</div>}
 
         <form className={styles.form} onSubmit={handleSubmit}>
+          <div className={styles.inputGroup}>
+            <label className={styles.label} htmlFor="username">Username (optional)</label>
+            <input
+              id="username"
+              type="text"
+              className={styles.input}
+              placeholder="f1fan123"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+
           <div className={styles.inputGroup}>
             <label className={styles.label} htmlFor="email">Email Address</label>
             <input

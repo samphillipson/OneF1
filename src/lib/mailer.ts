@@ -1,13 +1,15 @@
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const appUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000';
+const fromEmail = process.env.RESEND_FROM_EMAIL || 'F1 AI Companion <onboarding@resend.dev>';
 
 export async function sendVerificationEmail(email: string, token: string) {
-  const verifyUrl = `${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/api/auth/verify?token=${token}`;
+  const verifyUrl = `${appUrl}/api/auth/verify?token=${token}`;
 
   try {
     const data = await resend.emails.send({
-      from: 'F1 AI Companion <onboarding@resend.dev>', // resend.dev is the default test domain provided by Resend
+      from: fromEmail,
       to: [email],
       subject: 'Verify your email address - F1 AI Companion',
       html: `
@@ -31,11 +33,11 @@ export async function sendVerificationEmail(email: string, token: string) {
 }
 
 export async function sendPasswordResetEmail(email: string, token: string) {
-  const resetUrl = `${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/reset-password?token=${token}`;
+  const resetUrl = `${appUrl}/reset-password?token=${token}`;
 
   try {
     const data = await resend.emails.send({
-      from: 'F1 AI Companion <onboarding@resend.dev>',
+      from: fromEmail,
       to: [email],
       subject: 'Reset your password - F1 AI Companion',
       html: `

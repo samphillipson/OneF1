@@ -40,10 +40,26 @@ export const authOptions: NextAuthOptions = {
           throw new Error("Please verify your email address before signing in");
         }
 
-        return { id: user.id, email: user.email };
+        return { id: user.id, email: user.email, name: user.username };
       }
     })
   ],
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+        token.username = (user as any).name;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (token) {
+        (session.user as any).id = token.id;
+        (session.user as any).username = token.username;
+      }
+      return session;
+    }
+  },
   pages: {
     signIn: '/login',
   },

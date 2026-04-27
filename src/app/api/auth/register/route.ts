@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
-import { findUserByEmail, createUser } from '@/lib/users';
+import { findUserByEmail, createUser, findUserByUsername } from '@/lib/users';
 import { sendVerificationEmail } from '@/lib/mailer';
 import bcrypt from 'bcryptjs';
 import crypto from 'crypto';
 
 export async function POST(req: Request) {
   try {
-    const { email, password } = await req.json();
+    const { email, password, username } = await req.json();
 
     if (!email || !password) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
@@ -14,13 +14,21 @@ export async function POST(req: Request) {
 
     const existingUser = await findUserByEmail(email);
     if (existingUser) {
-      return NextResponse.json({ error: "User already exists" }, { status: 400 });
+      return NextResponse.json({ error: "Email already exists" }, { status: 400 });
+    }
+
+    if (username) {
+      const existingUsername = await findUserByUsername(username);
+      if (existingUsername) {
+        return NextResponse.json({ error: "Username already exists" }, { status: 400 });
+      }
     }
 
     const passwordHash = await bcrypt.hash(password, 10);
     const verificationToken = crypto.randomBytes(32).toString('hex');
     await createUser({
       email,
+      username,
       passwordHash,
       verificationToken
     });
