@@ -36,12 +36,12 @@ export default function Header({ session }: HeaderProps) {
           style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}
         >
           <div className={styles.logo}>
+            ONE
             <img 
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Formula_One_logo.svg/250px-Formula_One_logo.svg.png" 
               alt="F1" 
               className={styles.f1LogoImg} 
             />
-            OneF1
           </div>
         </Link>
         <div className={styles.headerBadge}>
