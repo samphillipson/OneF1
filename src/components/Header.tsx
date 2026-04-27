@@ -41,7 +41,7 @@ export default function Header({ session }: HeaderProps) {
               alt="F1" 
               className={styles.f1LogoImg} 
             />
-            AI Companion
+            One F1
           </div>
         </Link>
         <div className={styles.headerBadge}>

@@ -8,8 +8,8 @@ import { authOptions } from "@/lib/auth";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "F1 AI Companion",
-  description: "Your AI-powered Formula 1 dashboard and assistant.",
+  title: "One F1",
+  description: "Your premier AI-powered Formula 1 dashboard and analytics platform.",
 };
 
 export default async function RootLayout({
