@@ -11,7 +11,7 @@ export default function TermsOfService() {
           <section style={{ marginBottom: '2rem' }}>
             <h2 style={{ color: 'var(--f1-red)', marginBottom: '1rem' }}>1. Acceptance of Terms</h2>
             <p style={{ opacity: 0.8, lineHeight: '1.6' }}>
-              By accessing and using F1 AI Companion, you agree to be bound by these terms. This is a fan-made application and is intended for informational and entertainment purposes only.
+              By accessing and using OneF1, you agree to be bound by these terms. This is a fan-made application and is intended for informational and entertainment purposes only.
             </p>
           </section>
 

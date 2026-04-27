@@ -41,7 +41,7 @@ export default function Header({ session }: HeaderProps) {
               alt="F1" 
               className={styles.f1LogoImg} 
             />
-            One F1
+            OneF1
           </div>
         </Link>
         <div className={styles.headerBadge}>

@@ -30,7 +30,7 @@ export default async function Home() {
             <strong>Disclaimer:</strong> This is an unofficial fan application. F1, FORMULA ONE, FORMULA 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX and related marks are trade marks of Formula One Licensing B.V. This application is not affiliated with, endorsed by, or sponsored by Formula 1, the FIA, or Google.
           </p>
           <div className={styles.footerLinks}>
-            <span>&copy; {new Date().getFullYear()} One F1</span>
+            <span>&copy; {new Date().getFullYear()} OneF1</span>
             <Link href="/privacy">Privacy Policy</Link>
             <Link href="/terms">Terms of Service</Link>
           </div>

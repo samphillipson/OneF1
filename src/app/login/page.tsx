@@ -64,7 +64,7 @@ export default function LoginPage() {
         
         <div className={styles.header}>
           <h1 className={styles.title}>Welcome Back</h1>
-          <p className={styles.subtitle}>Sign in to One F1</p>
+          <p className={styles.subtitle}>Sign in to OneF1</p>
         </div>
 
         {error && <div className={styles.error}>{error}</div>}

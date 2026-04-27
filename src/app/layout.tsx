@@ -8,7 +8,7 @@ import { authOptions } from "@/lib/auth";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "One F1",
+  title: "OneF1",
   description: "Your premier AI-powered Formula 1 dashboard and analytics platform.",
 };
 

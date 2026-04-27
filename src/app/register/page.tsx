@@ -53,7 +53,7 @@ export default function RegisterPage() {
         </Link>
         
         <div className={styles.header}>
-          <h1 className={styles.title}>Join One F1</h1>
+          <h1 className={styles.title}>Join OneF1</h1>
           <p className={styles.subtitle}>Create an account to unlock predictions</p>
         </div>
 

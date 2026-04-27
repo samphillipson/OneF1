@@ -5,7 +5,7 @@ import styles from './page.module.css';
 import globalStyles from '../page.module.css';
 
 export const metadata = {
-  title: 'Drivers - F1 AI Companion',
+  title: 'Drivers - OneF1',
   description: 'Updated information about current F1 drivers, grouped by team.',
 };
 
