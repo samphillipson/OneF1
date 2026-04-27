@@ -1,158 +1,501 @@
 {
-  "hamilton": {
-    "personal": "Lewis Hamilton was born in Stevenage, England. Raised by his father Anthony, who worked multiple jobs to support his karting career, Hamilton is a British national of Grenadian descent. He is well-known for his interests in high fashion, music, and his advocacy for social justice and environmental sustainability.",
-    "career": "Hamilton's career is defined by his record-tying seven World Championships and the most wins and pole positions in F1 history. Starting with McLaren in 2007, he moved to Mercedes in 2013, sparking an era of dominance that reshaped the sport's record books.",
-    "stats": { "titles": "7", "wins": "105", "podiums": "201", "bestFinish": "1st" },
-    "timestamp": 1777025219132
-  },
-  "lewis_hamilton": {
-    "personal": "Lewis Hamilton was born in Stevenage, England. Raised by his father Anthony, who worked multiple jobs to support his karting career, Hamilton is a British national of Grenadian descent. He is well-known for his interests in high fashion, music, and his advocacy for social justice and environmental sustainability.",
-    "career": "Hamilton's career is defined by his record-tying seven World Championships and the most wins and pole positions in F1 history. Starting with McLaren in 2007, he moved to Mercedes in 2013, sparking an era of dominance that reshaped the sport's record books.",
-    "stats": { "titles": "7", "wins": "105", "podiums": "201", "bestFinish": "1st" },
-    "timestamp": 1777025219132
-  },
-  "verstappen": {
-    "personal": "Max Verstappen was born in Belgium but races under the Dutch flag. The son of former F1 driver Jos Verstappen, he was famously groomed for success from a very early age. He is an avid sim racer and enjoys a relatively private life in Monaco.",
-    "career": "Verstappen became the youngest driver in F1 history at age 17. He has since secured three consecutive World Championships with Red Bull Racing, becoming the dominant force of the modern era with a relentless and aggressive driving style.",
-    "stats": { "titles": "3", "wins": "61", "podiums": "107", "bestFinish": "1st" },
-    "timestamp": 1777025219132
-  },
-  "max_verstappen": {
-    "personal": "Max Verstappen was born in Belgium but races under the Dutch flag. The son of former F1 driver Jos Verstappen, he was famously groomed for success from a very early age. He is an avid sim racer and enjoys a relatively private life in Monaco.",
-    "career": "Verstappen became the youngest driver in F1 history at age 17. He has since secured three consecutive World Championships with Red Bull Racing, becoming the dominant force of the modern era with a relentless and aggressive driving style.",
-    "stats": { "titles": "3", "wins": "61", "podiums": "107", "bestFinish": "1st" },
-    "timestamp": 1777025219132
-  },
-  "leclerc": {
-    "personal": "Charles Leclerc was born and raised in Monte Carlo, Monaco. A talented pianist and fashion enthusiast, he maintains a strong connection to his Monegasque roots. He is known for his humility and his close relationship with the Ferrari family.",
-    "career": "A Ferrari protégé, Leclerc debuted with Sauber before being promoted to the Scuderia. He is the face of Ferrari's championship hopes, known for his incredible qualifying pace and historic victories at Spa and Monza.",
-    "stats": { "titles": "0", "wins": "6", "podiums": "36", "bestFinish": "1st" },
-    "timestamp": 1777025219132
-  },
-  "charles_leclerc": {
-    "personal": "Charles Leclerc was born and raised in Monte Carlo, Monaco. A talented pianist and fashion enthusiast, he maintains a strong connection to his Monegasque roots. He is known for his humility and his close relationship with the Ferrari family.",
-    "career": "A Ferrari protégé, Leclerc debuted with Sauber before being promoted to the Scuderia. He is the face of Ferrari's championship hopes, known for his incredible qualifying pace and historic victories at Spa and Monza.",
-    "stats": { "titles": "0", "wins": "6", "podiums": "36", "bestFinish": "1st" },
-    "timestamp": 1777025219132
-  },
-  "norris": {
-    "personal": "Lando Norris was born in Bristol, England. Known for his digital presence and love for gaming, he founded the brand Quadrant. He is an approachable and relatable figure, often sharing his interests in golf and photography.",
-    "career": "Norris has been a standout performer for McLaren since his debut. He secured a breakthrough maiden victory in Miami in 2024, cementing his status as one of the sport's top-tier talents and a future title contender.",
-    "stats": { "titles": "0", "wins": "1", "podiums": "20", "bestFinish": "1st" },
-    "timestamp": 1777025219132
-  },
-  "alonso": {
-    "personal": "Fernando Alonso was born in Oviedo, Spain. A double World Champion, he is known for his 'samurai' philosophy and extreme competitiveness. He is a keen cyclist and a dedicated fan of Real Madrid.",
-    "career": "Alonso famously ended Michael Schumacher's dominance in the mid-2000s. With over two decades in the sport, his racecraft and longevity are legendary, spanning stints at Renault, Ferrari, McLaren, and Aston Martin.",
-    "stats": { "titles": "2", "wins": "32", "podiums": "106", "bestFinish": "1st" },
-    "timestamp": 1777025219132
-  },
-  "sainz": {
-    "personal": "Carlos Sainz Jr. was born in Madrid, Spain, as the son of rally legend Carlos Sainz. Known as the 'Smooth Operator', he is an analytical driver who enjoys golf and surfing away from the track.",
-    "career": "Sainz has raced for Toro Rosso, Renault, McLaren, and Ferrari. He is a multiple race winner, celebrated for his strategic intelligence and his ability to deliver consistent results in high-pressure situations.",
-    "stats": { "titles": "0", "wins": "3", "podiums": "22", "bestFinish": "1st" },
-    "timestamp": 1777025219132
-  },
-  "russell": {
-    "personal": "George Russell was born in King's Lynn, England. Known for his professional demeanor and technical focus, he is a key figure in the Mercedes team. He enjoys fitness and sharing his training routines.",
-    "career": "After excelling at Williams, Russell was promoted to Mercedes where he secured his first victory in Brazil. He is regarded as a future world champion, known for his clinical pace and qualifying brilliance.",
-    "stats": { "titles": "0", "wins": "2", "podiums": "14", "bestFinish": "1st" },
-    "timestamp": 1777025219132
-  },
-  "piastri": {
-    "personal": "Oscar Piastri was born in Melbourne, Australia. Known for his calm and composed attitude, he moved to Europe as a teenager to pursue racing. He is a supporter of the Richmond Tigers in Australian rules football.",
-    "career": "Piastri won the F3 and F2 titles in consecutive rookie years. Since joining McLaren, he has proven his elite talent with a Sprint win and multiple podiums, marking him as a future star of the sport.",
-    "stats": { "titles": "0", "wins": "1", "podiums": "9", "bestFinish": "1st" },
-    "timestamp": 1777025219132
-  },
   "gasly": {
-    "personal": "Pierre Gasly was born in Rouen, France. A stylish individual with an interest in fashion, he is a resilient driver who has overcome significant personal and professional challenges throughout his career.",
-    "career": "Gasly's career highlight is a historic victory at the 2020 Italian Grand Prix with AlphaTauri. Now leading the Alpine team, he remains a consistent point-scorer and a premier midfield talent.",
-    "stats": { "titles": "0", "wins": "1", "podiums": "4", "bestFinish": "1st" },
-    "timestamp": 1777025219132
-  },
-  "perez": {
-    "personal": "Sergio 'Checo' Perez was born in Guadalajara, Mexico. A devoted family man and national hero, he is known for his tyre management skills and his deep connection to his Mexican fans.",
-    "career": "Perez has enjoyed a long career, peaking with his move to Red Bull Racing. A multiple race winner, including a historic victory in Monaco, he is Mexico's most successful F1 driver of all time.",
-    "stats": { "titles": "0", "wins": "6", "podiums": "39", "bestFinish": "1st" },
-    "timestamp": 1777025219132
-  },
-  "stroll": {
-    "personal": "Lance Stroll was born in Montreal, Canada. The son of Lawrence Stroll, he has been immersed in racing since childhood. He is an avid skier and outdoor enthusiast who keeps a focused profile.",
-    "career": "Stroll famously secured a podium in his rookie season at age 18. He has since amassed multiple podiums and a pole position, particularly excelling in challenging wet-weather conditions.",
-    "stats": { "titles": "0", "wins": "0", "podiums": "3", "bestFinish": "3rd" },
-    "timestamp": 1777025219132
-  },
-  "hulkenberg": {
-    "personal": "Nico Hulkenberg was born in Emmerich am Rhein, Germany. Known for his professional and straightforward approach, he is highly respected for his technical knowledge and consistency.",
-    "career": "Hulkenberg is a stalwart of the midfield, having raced for Williams, Renault, and Haas. A Le Mans winner, he is celebrated for his qualifying pace and his ability to maximize the potential of his car.",
-    "stats": { "titles": "0", "wins": "0", "podiums": "0", "bestFinish": "4th" },
-    "timestamp": 1777025219132
-  },
-  "tsunoda": {
-    "personal": "Yuki Tsunoda was born in Sagamihara, Japan. Famous for his fiery personality, he is a fan favorite known for his love of food and his honest approach to life and racing.",
-    "career": "Tsunoda has shown significant growth with RB, evolving into a consistent leader. His raw speed and daring overtakes have made him Japan's leading representative in the sport.",
-    "stats": { "titles": "0", "wins": "0", "podiums": "0", "bestFinish": "4th" },
-    "timestamp": 1777025219132
-  },
-  "albon": {
-    "personal": "Alexander Albon was born in London but races for Thailand. A polite and popular figure, he is a dedicated athlete who enjoys animals, golf, and spending time with his supportive family.",
-    "career": "Albon has become the undisputed leader at Williams after a resilient return to the grid. He is praised for his defensive driving and his ability to consistently drag points out of midfield cars.",
-    "stats": { "titles": "0", "wins": "0", "podiums": "2", "bestFinish": "3rd" },
-    "timestamp": 1777025219132
-  },
-  "bearman": {
-    "personal": "Oliver Bearman was born in Chelmsford, Essex. A grounded young talent from the Ferrari Academy, he is known for his mature temperament and his rapid rise through the junior categories.",
-    "career": "Bearman made a stunning F1 debut for Ferrari in Saudi Arabia, finishing in the points at just 18 years old. This performance fast-tracked him to a full-time seat for the future.",
-    "stats": { "titles": "0", "wins": "0", "podiums": "0", "bestFinish": "7th" },
-    "timestamp": 1777025219132
-  },
-  "antonelli": {
-    "personal": "Andrea Kimi Antonelli was born in Bologna, Italy. A once-in-a-generation talent, he has been carefully mentored by Mercedes to become the next Italian star of Formula 1.",
-    "career": "Antonelli's career is marked by dominant titles in every junior category he entered. His entry into F1 with Mercedes is one of the most anticipated debuts in the history of the sport.",
-    "stats": { "titles": "0", "wins": "0", "podiums": "0", "bestFinish": "N/A" },
-    "timestamp": 1777025219132
+    "personal": "Born in Rouen, France, Pierre Gasly is the youngest of five brothers in a family where racing was a shared heritage; his grandfather, grandmother, and father were all accomplished karting competitors. This lineage saw him begin racing at age six, eventually moving away from home at thirteen to refine his craft in Le Mans. Outside of the cockpit, Gasly is a dedicated Paris Saint-Germain supporter and an enthusiast of fashion and design, often seen collaborating with luxury brands and participating in high-level padel tournaments.",
+    "career": "Gasly entered Formula 1 with a stellar junior record, including titles in the Formula Renault 2.0 Eurocup and the GP2 Series. After a mid-season demotion from Red Bull Racing in 2019, he showcased immense resilience by securing a breakthrough podium in Brazil and a legendary victory at the 2020 Italian Grand Prix with AlphaTauri. Since joining Alpine in 2023, he has continued to cement his status as a top-tier driver, recently achieving a memorable podium at the 2024 Sao Paulo Grand Prix to further his legacy as France's modern F1 star.",
+    "stats": {
+      "titles": "0",
+      "wins": "1",
+      "podiums": "5",
+      "bestFinish": "1st"
+    },
+    "history": [
+      {
+        "season": "2024",
+        "team": "Alpine",
+        "position": "P12"
+      },
+      {
+        "season": "2023",
+        "team": "Alpine",
+        "position": "P11"
+      },
+      {
+        "season": "2022",
+        "team": "AlphaTauri",
+        "position": "P14"
+      },
+      {
+        "season": "2021",
+        "team": "AlphaTauri",
+        "position": "P9"
+      },
+      {
+        "season": "2020",
+        "team": "AlphaTauri",
+        "position": "P10"
+      },
+      {
+        "season": "2019",
+        "team": "Red Bull / Toro Rosso",
+        "position": "P7"
+      },
+      {
+        "season": "2018",
+        "team": "Toro Rosso",
+        "position": "P15"
+      },
+      {
+        "season": "2017",
+        "team": "Toro Rosso",
+        "position": "P21"
+      }
+    ],
+    "timestamp": 1777299288753
   },
   "arvid_lindblad": {
-    "personal": "Arvid Lindblad was born in London. A key member of the Red Bull Junior Team, he is known for his focused and analytical approach to racing and his rapid development.",
-    "career": "Lindblad has enjoyed a meteoric rise through the junior ranks, proving himself to be a race-winner in F3. He is considered one of Red Bull's most promising prospects for a future F1 seat.",
-    "stats": { "titles": "0", "wins": "0", "podiums": "0", "bestFinish": "N/A" },
-    "timestamp": 1777025219132
+    "personal": "Arvid Lindblad was born on August 8, 2007, in London, England, and possesses dual British and Swedish citizenship, though he competes professionally under the British banner. Growing up in a household where his father, Peter, encouraged his competitive drive, Lindblad began karting at age five and quickly developed a reputation for clinical speed and tactical awareness. Beyond the racetrack, the young driver is a dedicated student who enjoys staying active through various sports, maintaining a high level of physical fitness and mental conditioning to balance the intense pressure of being a high-profile athlete within the Red Bull program.",
+    "career": "Managed by the Red Bull Junior Team since 2021, Lindblad has enjoyed a rapid progression through the motorsport ladder, highlighted by championship success in high-level karting before moving to single-seaters. His career gained significant momentum with Prema Racing in the Italian F4 Championship and a victory at the 2023 Macau Formula 4 Grand Prix, which served as a springboard for his promotion to FIA Formula 3. In 2024, he emerged as a standout talent in his debut F3 season with Prema, securing multiple race victories and solidifying his trajectory as one of the sport’s most anticipated prospects currently preparing for an eventual promotion to the Formula 1 grid.",
+    "stats": {
+      "titles": "0",
+      "wins": "0",
+      "podiums": "0",
+      "bestFinish": "N/A"
+    },
+    "history": [],
+    "timestamp": 1777299359368
   },
-  "bortoleto": {
-    "personal": "Gabriel Bortoleto was born in Sao Paulo, Brazil. Managed by Fernando Alonso, he is the latest talent to emerge from a nation with a deep and storied history in Formula 1.",
-    "career": "Bortoleto won the F3 championship in his rookie season, immediately marking him as a premier talent. His smooth driving style and consistency have fast-tracked him toward the F1 grid.",
-    "stats": { "titles": "0", "wins": "0", "podiums": "0", "bestFinish": "N/A" },
-    "timestamp": 1777025219132
+  "alonso": {
+    "personal": "Born in Oviedo, Spain, in 1981, Fernando Alonso’s racing journey began when his father, an amateur kart enthusiast, built a kart intended for his older sister that Fernando inherited at age three. Growing up in a modest household, his early talent was nurtured by his family's dedication, leading him to several national titles and a world karting championship by his teens. Outside the cockpit, the Spaniard is a devoted fan of Real Madrid and an avid cyclist, often noted for his intense competitive nature and a long-standing personal hobby of performing magic and card tricks.",
+    "career": "Alonso debuted in Formula 1 with Minardi in 2001 before joining Renault, where he famously ended Michael Schumacher’s era of dominance by securing back-to-back World Championships in 2005 and 2006. Throughout a storied career featuring high-profile stints at McLaren, Ferrari, and Alpine, he established himself as one of the grid's most versatile and relentless operators, amassing 32 victories and over 100 podiums. Currently competing for Aston Martin, his longevity is unprecedented, marked by his pursuit of the Triple Crown of Motorsport and his record for the most race starts in the history of the sport.",
+    "stats": {
+      "titles": "2",
+      "wins": "32",
+      "podiums": "106",
+      "bestFinish": "1st"
+    },
+    "history": [
+      {
+        "season": "2024",
+        "team": "Aston Martin",
+        "position": "P9"
+      },
+      {
+        "season": "2023",
+        "team": "Aston Martin",
+        "position": "P4"
+      },
+      {
+        "season": "2022",
+        "team": "Alpine",
+        "position": "P9"
+      },
+      {
+        "season": "2021",
+        "team": "Alpine",
+        "position": "P10"
+      },
+      {
+        "season": "2018",
+        "team": "McLaren",
+        "position": "P11"
+      },
+      {
+        "season": "2017",
+        "team": "McLaren",
+        "position": "P15"
+      },
+      {
+        "season": "2016",
+        "team": "McLaren",
+        "position": "P10"
+      },
+      {
+        "season": "2015",
+        "team": "McLaren",
+        "position": "P17"
+      },
+      {
+        "season": "2014",
+        "team": "Ferrari",
+        "position": "P6"
+      },
+      {
+        "season": "2013",
+        "team": "Ferrari",
+        "position": "P2"
+      },
+      {
+        "season": "2012",
+        "team": "Ferrari",
+        "position": "P2"
+      },
+      {
+        "season": "2011",
+        "team": "Ferrari",
+        "position": "P4"
+      },
+      {
+        "season": "2010",
+        "team": "Ferrari",
+        "position": "P2"
+      },
+      {
+        "season": "2009",
+        "team": "Renault",
+        "position": "P9"
+      },
+      {
+        "season": "2008",
+        "team": "Renault",
+        "position": "P5"
+      },
+      {
+        "season": "2007",
+        "team": "McLaren",
+        "position": "P3"
+      },
+      {
+        "season": "2006",
+        "team": "Renault",
+        "position": "P1"
+      },
+      {
+        "season": "2005",
+        "team": "Renault",
+        "position": "P1"
+      },
+      {
+        "season": "2004",
+        "team": "Renault",
+        "position": "P4"
+      },
+      {
+        "season": "2003",
+        "team": "Renault",
+        "position": "P6"
+      },
+      {
+        "season": "2001",
+        "team": "Minardi",
+        "position": "P23"
+      }
+    ],
+    "timestamp": 1777299835095
   },
   "colapinto": {
-    "personal": "Franco Colapinto was born in Pilar, Argentina. A charismatic figure who has revitalized F1 interest in his home country, he moved to Europe alone as a teenager to pursue his dreams.",
-    "career": "Colapinto made a surprise and impressive mid-season debut for Williams, scoring points almost immediately and establishing himself as a legitimate talent for the sport's future.",
-    "stats": { "titles": "0", "wins": "0", "podiums": "0", "bestFinish": "8th" },
-    "timestamp": 1777025219132
+    "personal": "Franco Colapinto was born on May 27, 2003, in Pilar, Buenos Aires, and stands as the first Argentine driver to compete in Formula 1 in over two decades. His passion for speed was influenced by his father, Aníbal, who was a competitor and team owner in Argentina’s domestic racing scene. At just 14 years old, Franco moved to Europe alone to live in a karting factory in Italy, a sacrifice that defined his early career. Beyond the track, he is a fervent supporter of the Boca Juniors football club and has become a viral sensation for his charismatic personality and unfiltered wit in media interviews.",
+    "career": "Colapinto’s ascent through the junior categories was fueled by a dominant title in the 2019 Spanish F4 Championship, followed by race-winning campaigns in FIA Formula 3 and Formula 2 with MP Motorsport. As a standout member of the Williams Racing Driver Academy, he was unexpectedly promoted mid-season to replace Logan Sargeant at Williams for the 2024 Italian Grand Prix. He reached a historic milestone at the 2024 Azerbaijan Grand Prix, finishing eighth to become the first Argentine to score Formula 1 points since Carlos Reutemann in 1982, quickly cementing his reputation as a formidable talent on the grid.",
+    "stats": {
+      "titles": "0",
+      "wins": "0",
+      "podiums": "0",
+      "bestFinish": "8th"
+    },
+    "history": [
+      {
+        "season": "2024",
+        "team": "Williams",
+        "position": "P19"
+      }
+    ],
+    "timestamp": 1777299914121
   },
-  "ocon": {
-    "personal": "Esteban Ocon was born in Évreux, France. His journey is a famous story of sacrifice, with his parents selling their home to support his karting. He is a tall, athletic, and fiercely competitive racer.",
-    "career": "Ocon's career highlight is a legendary victory at the 2021 Hungarian Grand Prix. Known for his defensive skills and technical consistency, he is a proven race-winner and leader.",
-    "stats": { "titles": "0", "wins": "1", "podiums": "3", "bestFinish": "1st" },
-    "timestamp": 1777025219132
+  "hulkenberg": {
+    "personal": "Born in Emmerich am Rhein, West Germany, in 1987, Nico Hülkenberg began karting at age ten, quickly demonstrating the clinical precision that would define his professional style. Unlike many of his peers from deep-rooted racing dynasties, Hülkenberg’s path was forged through the logistical support of his father, Klaus, who operated a shipping company. Outside the cockpit, the polyglot athlete—fluent in German, Dutch, and English—is an avid fan of tennis and cycling, often seen training near his home in Monaco where he resides with his wife, Egle, and their daughter. He is affectionately known as 'The Hulk,' a moniker reflecting both his name and his formidable physical presence on the grid.",
+    "career": "Hülkenberg’s ascent to Formula 1 was meteoric, marked by dominant titles in Formula BMW, A1GP, and the GP2 Series, where he clinched the championship as a rookie in 2009. He made his F1 debut with Williams in 2010, famously securing a surprise pole position at the Brazilian Grand Prix during his maiden season. Over a career spanning tenures at Force India, Sauber, Renault, and Haas, he has earned a reputation as one of the grid’s most reliable and technically gifted drivers, frequently called upon as a 'super-sub' during the COVID-19 era. While he notably holds the record for the most race starts without a podium, his 2015 victory at the 24 Hours of Le Mans with Porsche remains a crowning achievement that highlights his elite versatility.",
+    "stats": {
+      "titles": "0",
+      "wins": "0",
+      "podiums": "0",
+      "bestFinish": "4th"
+    },
+    "history": [
+      {
+        "season": "2010",
+        "team": "Williams",
+        "position": "P14"
+      },
+      {
+        "season": "2012",
+        "team": "Force India",
+        "position": "P11"
+      },
+      {
+        "season": "2013",
+        "team": "Sauber",
+        "position": "P10"
+      },
+      {
+        "season": "2014",
+        "team": "Force India",
+        "position": "P9"
+      },
+      {
+        "season": "2015",
+        "team": "Force India",
+        "position": "P10"
+      },
+      {
+        "season": "2016",
+        "team": "Force India",
+        "position": "P9"
+      },
+      {
+        "season": "2017",
+        "team": "Renault",
+        "position": "P10"
+      },
+      {
+        "season": "2018",
+        "team": "Renault",
+        "position": "P7"
+      },
+      {
+        "season": "2019",
+        "team": "Renault",
+        "position": "P14"
+      },
+      {
+        "season": "2020",
+        "team": "Racing Point",
+        "position": "P15"
+      },
+      {
+        "season": "2022",
+        "team": "Aston Martin",
+        "position": "P22"
+      },
+      {
+        "season": "2023",
+        "team": "Haas",
+        "position": "P16"
+      },
+      {
+        "season": "2024",
+        "team": "Haas",
+        "position": "P11"
+      }
+    ],
+    "timestamp": 1777300062627
   },
-  "bottas": {
-    "personal": "Valtteri Bottas was born in Nastola, Finland. A coffee and cycling enthusiast, he has embraced an authentic and relaxed personality in recent years while maintaining his elite speed.",
-    "career": "A 10-time race winner with Mercedes, Bottas played a crucial role in multiple constructors' titles. Now a leader at Sauber, he remains one of the most respected and fastest qualifiers on the grid.",
-    "stats": { "titles": "0", "wins": "10", "podiums": "67", "bestFinish": "1st" },
-    "timestamp": 1777025219132
+  "stroll": {
+    "personal": "Lance Stroll was born on October 29, 1998, in Montreal, Canada, to billionaire businessman Lawrence Stroll and fashion designer Claire-Anne Callens. Raised in an environment of significant wealth and sporting interest, he became an accomplished athlete outside of racing, particularly in ice hockey where he remains a devoted fan of the Montreal Canadiens. His dual Canadian-Belgian heritage and his family’s prominent role in the fashion world shaped a private yet high-profile upbringing focused on international competition and diverse athletic pursuits like surfing and skiing.",
+    "career": "Stroll entered Formula 1 in 2017 with Williams after clinching the Italian F4 and FIA European Formula 3 titles in quick succession. During his debut season, he became the youngest rookie to secure a podium finish with a standout drive to third place at the Azerbaijan Grand Prix. His career evolved through the transition of his team into Racing Point and eventually Aston Martin, where he claimed a stunning maiden pole position at the 2020 Turkish Grand Prix and added two more podiums. Known for his exceptional performance in wet-weather conditions, Stroll has established himself as a durable presence on the grid through various team iterations.",
+    "stats": {
+      "titles": "0",
+      "wins": "0",
+      "podiums": "3",
+      "bestFinish": "3rd"
+    },
+    "history": [
+      {
+        "season": "2024",
+        "team": "Aston Martin",
+        "position": "P10"
+      },
+      {
+        "season": "2023",
+        "team": "Aston Martin",
+        "position": "P10"
+      },
+      {
+        "season": "2022",
+        "team": "Aston Martin",
+        "position": "P15"
+      },
+      {
+        "season": "2021",
+        "team": "Aston Martin",
+        "position": "P13"
+      },
+      {
+        "season": "2020",
+        "team": "Racing Point",
+        "position": "P11"
+      },
+      {
+        "season": "2019",
+        "team": "Racing Point",
+        "position": "P15"
+      },
+      {
+        "season": "2018",
+        "team": "Williams",
+        "position": "P18"
+      },
+      {
+        "season": "2017",
+        "team": "Williams",
+        "position": "P12"
+      }
+    ],
+    "timestamp": 1777299989893
   },
-  "lawson": {
-    "personal": "Liam Lawson was born in Hastings, New Zealand. A quiet and focused athlete, he has proven his worth by excelling in every category he has entered across the globe.",
-    "career": "Lawson famously scored points as a late replacement in F1, earning him a reputation as a highly dependable and fast driver. He is the future of the Red Bull/RB driver program.",
-    "stats": { "titles": "0", "wins": "0", "podiums": "0", "bestFinish": "9th" },
-    "timestamp": 1777025219132
+  "perez": {
+    "personal": "Born in Guadalajara, Mexico, Sergio Pérez is the youngest child of Antonio Pérez Garibay, a former racing driver and politician, and Marilú Mendoza. His older brother, Antonio, also pursued a professional racing career in NASCAR Mexico, fostering a family legacy that deeply influenced Sergio’s early entry into the sport. Outside of his professional life, Pérez is a passionate fan of the Club América football team and a devout Catholic, often dedicating his time to the Checo Pérez Foundation, which provides support and resources to orphans and children with cancer.",
+    "career": "Pérez made his Formula 1 debut with Sauber in 2011, quickly earning a reputation as a 'tire whisperer' due to his exceptional ability to manage rubber over long race stints. After a challenging year at McLaren in 2013, he spent seven seasons with the Force India and Racing Point outfit, where he secured numerous podiums and a historic maiden win at the 2020 Sakhir Grand Prix. Since joining Red Bull Racing in 2021, he has become the most successful Mexican driver in history, achieving multiple wins on prestigious street circuits like Monaco and Baku, and finishing as the World Championship runner-up in 2023.",
+    "stats": {
+      "titles": "0",
+      "wins": "6",
+      "podiums": "39",
+      "bestFinish": "1st"
+    },
+    "history": [
+      {
+        "season": "2024",
+        "team": "Red Bull Racing",
+        "position": "P8"
+      },
+      {
+        "season": "2023",
+        "team": "Red Bull Racing",
+        "position": "P2"
+      },
+      {
+        "season": "2022",
+        "team": "Red Bull Racing",
+        "position": "P3"
+      },
+      {
+        "season": "2021",
+        "team": "Red Bull Racing",
+        "position": "P4"
+      },
+      {
+        "season": "2020",
+        "team": "Racing Point",
+        "position": "P4"
+      },
+      {
+        "season": "2019",
+        "team": "Racing Point",
+        "position": "P10"
+      },
+      {
+        "season": "2018",
+        "team": "Force India / Racing Point",
+        "position": "P8"
+      },
+      {
+        "season": "2017",
+        "team": "Force India",
+        "position": "P7"
+      },
+      {
+        "season": "2016",
+        "team": "Force India",
+        "position": "P7"
+      },
+      {
+        "season": "2015",
+        "team": "Force India",
+        "position": "P9"
+      },
+      {
+        "season": "2014",
+        "team": "Force India",
+        "position": "P10"
+      },
+      {
+        "season": "2013",
+        "team": "McLaren",
+        "position": "P11"
+      },
+      {
+        "season": "2012",
+        "team": "Sauber",
+        "position": "P10"
+      },
+      {
+        "season": "2011",
+        "team": "Sauber",
+        "position": "P16"
+      }
+    ],
+    "timestamp": 1777300080339
   },
-  "hadjar": {
-    "personal": "Isack Hadjar was born in Paris, France. A fiery member of the Red Bull Junior Team, he is known for his unfiltered personality and his extreme dedication to the simulator.",
-    "career": "Hadjar has been a title contender in both F3 and F2, known for his aggressive racecraft. He is widely considered the next French star to graduate to the Formula 1 grid.",
-    "stats": { "titles": "0", "wins": "0", "podiums": "0", "bestFinish": "N/A" },
-    "timestamp": 1777025219132
+  "piastri": {
+    "personal": "Born in Melbourne, Australia, in 2001, Oscar Piastri is of Italian-Australian heritage and developed his passion for racing through remote-controlled cars before moving to karts. His father, Chris, played a pivotal role in his early development, serving as his mechanic during the formative years of his competitive career. Away from the circuit, Piastri is noted for his dry wit and calm temperament, and he remains a dedicated follower of cricket and the Australian Football League, specifically supporting the Richmond Tigers.",
+    "career": "Piastri reached Formula 1 following a historic run in the junior categories, where he became the first driver to win the Formula Renault Eurocup, FIA Formula 3, and FIA Formula 2 championships in successive rookie seasons. After a high-profile legal dispute regarding his contract between Alpine and McLaren, he debuted for the Woking-based team in 2023. Since then, he has established himself as a frontrunner, claiming a Sprint race victory in Qatar during his debut year and securing his maiden Grand Prix win at the 2024 Hungarian Grand Prix.",
+    "stats": {
+      "titles": "0",
+      "wins": "2",
+      "podiums": "9",
+      "bestFinish": "1st"
+    },
+    "history": [
+      {
+        "season": "2023",
+        "team": "McLaren",
+        "position": "P9"
+      },
+      {
+        "season": "2024",
+        "team": "McLaren",
+        "position": "P4"
+      }
+    ],
+    "timestamp": 1777300088599
+  },
+  "bearman": {
+    "personal": "Oliver Bearman, born in May 2005 in Chelmsford, Essex, is a prominent British talent whose ascent through the motorsport ranks was fueled by a childhood obsession with speed rather than a professional racing lineage. Supported closely by his father David, Bearman moved to Italy as a teenager to join the Ferrari Driver Academy, a pivotal step in his international career. When not behind the wheel, he is an avid golfer and maintains a rigorous physical training schedule, often sharing his journey with a supportive family circle that remains central to his life.",
+    "career": "Bearman's journey to the pinnacle of motorsport is marked by a historic 2021 season where he became the first driver to win both the ADAC and Italian F4 titles simultaneously. After a strong showing in Formula 3 and several victories in Formula 2 with Prema Racing, he made a sensational Formula 1 debut for Scuderia Ferrari at the 2024 Saudi Arabian Grand Prix, finishing seventh. This performance made him the youngest British driver in history and earned him a 2025 full-time seat with the Haas F1 Team, for whom he also competed as a substitute during the 2024 season.",
+    "stats": {
+      "titles": "0",
+      "wins": "0",
+      "podiums": "0",
+      "bestFinish": "7th"
+    },
+    "history": [
+      {
+        "season": "2024",
+        "team": "Ferrari / Haas",
+        "position": "P18"
+      }
+    ],
+    "timestamp": 1777300138807
+  },
+  "norris": {
+    "personal": "Born in Bristol in 1999, Lando Norris is a dual British-Belgian national who discovered his passion for motorsport at age seven after watching a local karting event. He is the son of Adam Norris, a highly successful retired pensions manager who supported a junior career that saw Lando become the youngest-ever CIK-FIA World Champion in the KF class. Outside the cockpit, Norris is a high-profile content creator and founder of the gaming and apparel brand Quadrant, and he is frequently praised for his transparency regarding mental health and his enthusiasm for golf and photography.",
+    "career": "Norris's path to the pinnacle of motorsport was marked by immediate success, including title wins in the MSA Formula, Toyota Racing Series, and the FIA Formula 3 European Championship. He made his Formula 1 debut with McLaren in 2019, quickly establishing a reputation for exceptional qualifying pace and race craft. After several years of consistent podium finishes and a near-miss in Sochi 2021, he secured his maiden victory at the 2024 Miami Grand Prix and went on to claim two more wins in the Netherlands and Singapore, ultimately finishing the 2024 season as the championship runner-up.",
+    "stats": {
+      "titles": "0",
+      "wins": "3",
+      "podiums": "25",
+      "bestFinish": "1st"
+    },
+    "history": [
+      {
+        "season": "2019",
+        "team": "McLaren",
+        "position": "P11"
+      },
+      {
+        "season": "2020",
+        "team": "McLaren",
+        "position": "P9"
+      },
+      {
+        "season": "2021",
+        "team": "McLaren",
+        "position": "P6"
+      },
+      {
+        "season": "2022",
+        "team": "McLaren",
+        "position": "P7"
+      },
+      {
+        "season": "2023",
+        "team": "McLaren",
+        "position": "P6"
+      },
+      {
+        "season": "2024",
+        "team": "McLaren",
+        "position": "P2"
+      }
+    ],
+    "timestamp": 1777300138853
   }
 }

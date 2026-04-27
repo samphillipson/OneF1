@@ -32,7 +32,6 @@ export default function Header({ session }: HeaderProps) {
       <div className={styles.logoContainer}>
         <Link 
           href="/" 
-          onClick={isHome ? scrollToTop : undefined}
           style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}
         >
           <div className={styles.logo}>
@@ -57,10 +56,10 @@ export default function Header({ session }: HeaderProps) {
       </div>
 
       <nav className={styles.nav}>
-        <Link href="/" className={styles.navLink} onClick={isHome ? scrollToTop : undefined}>Dashboard</Link>
+        <Link href="/" className={styles.navLink}>Dashboard</Link>
         <Link href="/drivers" className={styles.navLink}>Drivers</Link>
         <Link href="/tickets" className={styles.navLink}>Tickets</Link>
-        <Link href="/#chat" className={styles.navLink} onClick={scrollToChat}>AI Assistant</Link>
+        <Link href="/#chat" className={styles.navLink}>AI Assistant</Link>
         <Link href="/account" className={styles.navLink}>Account</Link>
         {session ? (
           <SignOutButton />

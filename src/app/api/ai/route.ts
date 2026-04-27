@@ -1,10 +1,15 @@
 import { NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { fetchCurrentStandings, fetchRaceSchedule } from '@/lib/jolpica';
+import { fetchCurrentStandings, fetchRaceSchedule, fetchConstructorStandings } from '@/lib/jolpica';
 
 export async function POST(req: Request) {
   try {
-    const { prompt } = await req.json();
+    const body = await req.json();
+    const prompt = body.prompt || body.message;
+
+    if (!prompt) {
+      return NextResponse.json({ error: "Prompt is required" }, { status: 400 });
+    }
 
     if (!process.env.GEMINI_API_KEY) {
       return NextResponse.json(
@@ -19,22 +24,33 @@ export async function POST(req: Request) {
     // Fetch real-time F1 context
     let contextStr = "";
     try {
-      const [standings, schedule] = await Promise.all([
+      const [dStandings, cStandings, schedule] = await Promise.all([
         fetchCurrentStandings(),
+        fetchConstructorStandings(),
         fetchRaceSchedule()
       ]);
-      const top3 = standings.slice(0, 3).map((d: any) => `${d.Driver.givenName} ${d.Driver.familyName} (${d.points} pts)`).join(', ');
+      
+      const top5Drivers = dStandings.slice(0, 5).map((d: any) => `${d.Driver.familyName} (${d.points} pts)`).join(', ');
+      const top3Constructors = cStandings.slice(0, 3).map((c: any) => `${c.Constructor.name} (${c.points} pts)`).join(', ');
       
       const now = new Date();
       const upcoming = schedule.find((r: any) => new Date(r.date) >= now) || schedule[0];
       const nextRaceStr = upcoming ? `${upcoming.raceName} at ${upcoming.Circuit.circuitName} on ${upcoming.date}` : "Unknown";
       
-      contextStr = `Current Top 3 Drivers: ${top3}. The next upcoming race is the ${nextRaceStr}. The current year is ${now.getFullYear()}.`;
+      contextStr = `Real-time F1 Status (${now.getFullYear()}):
+      Top 5 Drivers: ${top5Drivers}
+      Top 3 Constructors: ${top3Constructors}
+      Next Grand Prix: ${nextRaceStr}`;
     } catch (e) {
       console.error("Failed to fetch F1 context", e);
     }
     
-    const systemInstruction = `You are a Formula 1 expert assistant. Provide accurate, engaging answers about F1 history, stats, and predictions. ALWAYS base your answers on this real-time data if relevant: [${contextStr}]`;
+    const systemInstruction = `You are a Formula 1 expert assistant. Provide accurate, engaging answers about F1 history, stats, and predictions.
+    
+    CONTEXT DATA:
+    ${contextStr}
+    
+    Always use this context to provide the most up-to-date answers. If asked about strategy or lap times, use the provided data to give a technical but accessible analysis.`;
     
     let response;
     try {
@@ -43,7 +59,6 @@ export async function POST(req: Request) {
       if (err.status === 429) {
         return NextResponse.json({ response: "API Rate Limit Exceeded. Please wait a few seconds and try again." }, { status: 429 });
       } else if (err.status === 503) {
-        console.log("503 Service Unavailable, returning friendly error.");
         return NextResponse.json({ response: "Google API is currently experiencing high demand. Please try again later." }, { status: 503 });
       } else {
         throw err;

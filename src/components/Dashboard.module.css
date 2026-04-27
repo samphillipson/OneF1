@@ -6,15 +6,22 @@
   margin: 0 auto;
 }
 
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}
+
 .sectionTitle {
   font-size: 2.2rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
   color: var(--f1-white);
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
 .grid {
@@ -42,14 +49,39 @@
   border-color: rgba(255, 255, 255, 0.2);
 }
 
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.8rem;
+}
+
 .card h3 {
   font-size: 1.4rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--f1-white);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 0.8rem;
+}
+
+.toggleBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.toggleBtn:hover {
+  background: var(--f1-red);
+  color: white;
+  border-color: var(--f1-red);
 }
 
 .loader {
@@ -213,4 +245,50 @@
   letter-spacing: 0.02em;
   color: var(--f1-red);
   margin-bottom: 0.5rem;
+}
+
+.insightBtn {
+  background: var(--f1-red);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.insightBtn:hover:not(:disabled) {
+  background: #b30500;
+  transform: scale(1.05);
+}
+
+.insightBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.aiCard {
+  margin-bottom: 2rem;
+  padding: 1.5rem 2rem;
+  border-left: 4px solid var(--f1-red);
+  position: relative;
+  overflow: hidden;
+}
+
+.aiCard p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.aiBadge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--f1-red);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
 }

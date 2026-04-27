@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { fetchCurrentStandings } from '@/lib/jolpica';
+import { fetchCurrentStandings, fetchQualifyingResults } from '@/lib/jolpica';
 import DriverCard from '@/components/DriverCard';
 import styles from './page.module.css';
 import globalStyles from '../page.module.css';
@@ -11,6 +11,8 @@ export const metadata = {
 
 export default async function DriversPage() {
   const standings = await fetchCurrentStandings();
+  // Fetch latest qualifying results to calculate H2H (simulated logic)
+  const lastQualifying = await fetchQualifyingResults("last");
 
   // Group drivers by team
   const teams: Record<string, any[]> = {};
@@ -23,8 +25,18 @@ export default async function DriversPage() {
     teams[teamName].push(standing);
   });
 
-  // Sort teams alphabetically (or could sort by constructor standings if we fetched it)
   const sortedTeams = Object.keys(teams).sort();
+
+  const getQualifyingH2H = (teamName: string) => {
+    if (!lastQualifying || lastQualifying.length === 0) return null;
+    const teamDrivers = teams[teamName].map(s => s.Driver.driverId);
+    const results = lastQualifying.filter((q: any) => teamDrivers.includes(q.Driver.driverId));
+    if (results.length < 2) return null;
+    
+    // Simplistic H2H: Who was faster in the last session?
+    const faster = parseInt(results[0].position) < parseInt(results[1].position) ? results[0] : results[1];
+    return `Last Outing: ${faster.Driver.familyName} led qualifying`;
+  };
 
   return (
     <div className={styles.container} style={{ paddingTop: '2rem' }}>
@@ -34,10 +46,13 @@ export default async function DriversPage() {
             ← Back to Dashboard
           </Link>
         </div>
+        <h1 className={globalStyles.title} style={{ fontSize: '2.5rem', marginBottom: '3rem' }}>Grid Breakdown</h1>
+        
         {sortedTeams.map(teamName => (
           <section key={teamName} className={styles.teamSection}>
             <div className={styles.teamHeader}>
               <h2 className={styles.teamName}>{teamName}</h2>
+              <span className={styles.h2hBadge}>{getQualifyingH2H(teamName)}</span>
             </div>
             
             <div className={styles.grid}>

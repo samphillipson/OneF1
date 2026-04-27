@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server'; // Lifetime stats sync complete
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { NextResponse } from 'next/server';
+import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from '@google/generative-ai';
 import fs from 'fs';
 import path from 'path';
 
@@ -16,7 +16,7 @@ try {
 }
 
 // Load cache from file or initialize
-let cache: Record<string, { personal: string; career: string; timestamp: number }> = {};
+let cache: Record<string, { personal: string; career: string; history?: any[]; timestamp: number }> = {};
 function loadCacheFromDisk() {
   if (fs.existsSync(CACHE_FILE)) {
     try {
@@ -75,7 +75,27 @@ export async function GET(req: Request) {
     }
 
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const model = genAI.getGenerativeModel({ 
+      model: 'gemini-flash-latest',
+      safetySettings: [
+        {
+          category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+          threshold: HarmBlockThreshold.BLOCK_NONE,
+        },
+        {
+          category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+          threshold: HarmBlockThreshold.BLOCK_NONE,
+        },
+        {
+          category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+          threshold: HarmBlockThreshold.BLOCK_NONE,
+        },
+        {
+          category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+          threshold: HarmBlockThreshold.BLOCK_NONE,
+        },
+      ],
+    });
 
     const prompt = `
       You are an expert Formula 1 historian and journalist. 
@@ -93,8 +113,13 @@ export async function GET(req: Request) {
           "wins": "Total Grand Prix wins (e.g. '103')",
           "podiums": "Total podium finishes (e.g. '197')",
           "bestFinish": "Best career race finish (e.g. '1st' or '4th')"
-        }
+        },
+        "history": [
+          { "season": "2024", "team": "Mercedes", "position": "P2" },
+          { "season": "2023", "team": "Mercedes", "position": "P2" }
+        ]
       }
+      Important: Provide the full championship history for all seasons they have competed in F1. 
       Do not include any markdown formatting like \`\`\`json. Return just the raw JSON object.
     `;
 
@@ -141,7 +166,7 @@ export async function GET(req: Request) {
       const jsonStr = text.substring(startIndex, endIndex + 1);
       const parsedData = JSON.parse(jsonStr);
 
-      if (parsedData.personal && parsedData.career) {
+      if (parsedData.personal && parsedData.career && parsedData.history) {
         cache[driverId] = {
           ...parsedData,
           timestamp: Date.now()
@@ -153,7 +178,15 @@ export async function GET(req: Request) {
       }
       
     } catch (err: any) {
-      console.error("AI Generation Error for", driverName, ":", err.message);
+      const errorMsg = `AI Generation Error for ${driverName}: ${err.message}`;
+      console.error(errorMsg);
+      
+      try {
+        const logPath = path.join('C:\\Users\\samph\\.gemini\\antigravity\\brain\\edc1b67b-efb7-4b85-971d-86ebb2dd7186', 'api_error.log');
+        fs.appendFileSync(logPath, `\n[${new Date().toISOString()}] ${errorMsg}\n`);
+      } catch (logErr) {
+        // ignore log errors
+      }
       
       // If refresh failed, but we have an old cached version, return that as a final fallback
       if (cachedEntry) {
@@ -164,7 +197,12 @@ export async function GET(req: Request) {
       return NextResponse.json({ error: 'Failed to generate content' }, { status: 500 });
     }
   } catch (error: any) {
-    console.error('Driver Info API Error:', error);
+    const mainErrorMsg = `CRITICAL Driver Info API Error: ${error.message}`;
+    console.error(mainErrorMsg);
+    try {
+      const logPath = path.join('C:\\Users\\samph\\.gemini\\antigravity\\brain\\edc1b67b-efb7-4b85-971d-86ebb2dd7186', 'api_error.log');
+      fs.appendFileSync(logPath, `\n[${new Date().toISOString()}] ${mainErrorMsg}\n`);
+    } catch (logErr) {}
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }

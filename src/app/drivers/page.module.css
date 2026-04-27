@@ -62,10 +62,23 @@
 
 .teamHeader {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  justify-content: space-between;
   gap: 15px;
   padding-bottom: 15px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.h2hBadge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--f1-red);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .teamName {

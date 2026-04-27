@@ -207,3 +207,92 @@
   font-size: 0.85rem;
   font-weight: 600;
 }
+
+.emptyStateText {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.historyList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.historyList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.historyList::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.historyRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.seasonYear {
+  font-weight: 800;
+  color: var(--f1-white);
+  font-size: 0.9rem;
+  width: 45px;
+}
+
+.seasonTeam {
+  flex: 1;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 15px;
+}
+
+.seasonPos {
+  font-weight: 900;
+  color: var(--f1-red);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 2.5rem 0;
+  text-align: center;
+}
+
+.retryBtn {
+  background: var(--f1-red);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.6rem;
+  border-radius: 6px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.retryBtn:hover {
+  background: #b30500;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(225, 6, 0, 0.3);
+}
