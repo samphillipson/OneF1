@@ -72,38 +72,56 @@ export default async function RaceTicketPage({ params }: { params: { round: stri
     }
   ];
 
+  const countryCodeMap: Record<string, string> = {
+    "USA": "us", "United States": "us", "UK": "gb", "Great Britain": "gb",
+    "Italy": "it", "Monaco": "mc", "Spain": "es", "Canada": "ca",
+    "Austria": "at", "Belgium": "be", "Netherlands": "nl", "Singapore": "sg",
+    "Japan": "jp", "Qatar": "qa", "UAE": "ae", "Abu Dhabi": "ae",
+    "Saudi Arabia": "sa", "Bahrain": "bh", "Australia": "au", "China": "cn",
+    "Azerbaijan": "az", "Hungary": "hu", "Brazil": "br", "Mexico": "mx"
+  };
+  const countryCode = countryCodeMap[race.Circuit.Location.country] || "un";
+
   return (
     <div className={styles.container}>
-      <Link href="/tickets" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#a0a0a0', textDecoration: 'none', marginBottom: '2rem' }}>
+      <Link href="/tickets" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#a0a0a0', textDecoration: 'none', marginBottom: '2rem', position: 'relative', zIndex: 2 }}>
         <ArrowLeft size={16} /> Back to Schedule
       </Link>
 
       <header className={styles.raceHeader}>
-        <span className={styles.roundBadge} style={{ marginBottom: '1rem', display: 'inline-block' }}>Round {race.round}</span>
-        <h1 className={styles.title} style={{ marginBottom: '1rem' }}>{race.raceName}</h1>
-        
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', color: '#ccc', marginBottom: '1rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <Calendar size={18} style={{ color: 'var(--f1-red)' }} />
-            {dateStr}
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <MapPin size={18} style={{ color: 'var(--f1-red)' }} />
-            {race.Circuit.circuitName}, {race.Circuit.Location.locality}
-          </div>
-        </div>
-
-        {circuitDetails && (
-          <div className={styles.circuitDetails}>
-            <div className={styles.coordBox}>
-              <span>LAT: {circuitDetails.Location.lat}</span>
-              <span>LONG: {circuitDetails.Location.long}</span>
+        <img 
+          src={`https://flagcdn.com/${countryCode}.svg`} 
+          alt={`${race.Circuit.Location.country} Flag`} 
+          className={styles.watermark} 
+          style={{ opacity: 0.15, filter: 'grayscale(0%)' }}
+        />
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          <span className={styles.roundBadge} style={{ marginBottom: '1rem', display: 'inline-block' }}>Round {race.round}</span>
+          <h1 className={styles.title} style={{ marginBottom: '1rem' }}>{race.raceName}</h1>
+          
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', color: '#ccc', marginBottom: '1rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <Calendar size={18} style={{ color: 'var(--f1-red)' }} />
+              {dateStr}
             </div>
-            <a href={circuitDetails.url} target="_blank" rel="noopener noreferrer" className={styles.wikiLink}>
-              <Globe size={14} /> Official Circuit Info <ExternalLink size={12} />
-            </a>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <MapPin size={18} style={{ color: 'var(--f1-red)' }} />
+              {race.Circuit.circuitName}, {race.Circuit.Location.locality}
+            </div>
           </div>
-        )}
+
+          {circuitDetails && (
+            <div className={styles.circuitDetails}>
+              <div className={styles.coordBox}>
+                <span>LAT: {circuitDetails.Location.lat}</span>
+                <span>LONG: {circuitDetails.Location.long}</span>
+              </div>
+              <a href={circuitDetails.url} target="_blank" rel="noopener noreferrer" className={styles.wikiLink}>
+                <Globe size={14} /> Official Circuit Info <ExternalLink size={12} />
+              </a>
+            </div>
+          )}
+        </div>
       </header>
 
       <h2 style={{ textAlign: 'center', marginBottom: '2rem', fontSize: '2rem' }}>Select Your Experience</h2>

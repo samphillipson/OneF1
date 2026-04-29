@@ -17,9 +17,10 @@ interface DriverCardProps {
   currentPoints: string;
   currentWins: string;
   currentPosition: string;
+  teamColor?: string;
 }
 
-export default function DriverCard({ driver, currentPoints, currentWins, currentPosition }: DriverCardProps) {
+export default function DriverCard({ driver, currentPoints, currentWins, currentPosition, teamColor }: DriverCardProps) {
   const [activeTab, setActiveTab] = useState<'personal' | 'season' | 'history'>('season');
   const [backgroundInfo, setBackgroundInfo] = useState<{ 
     personal: string; 
@@ -74,7 +75,8 @@ export default function DriverCard({ driver, currentPoints, currentWins, current
   };
 
   return (
-    <div className={styles.card}>
+    <div className={styles.card} style={teamColor ? { '--team-color': teamColor } as any : {}}>
+      {teamColor && <div className={styles.teamAccent}></div>}
       <div className={styles.header}>
         <div className={styles.nameContainer}>
           <span className={styles.givenName}>{driver.givenName}</span>

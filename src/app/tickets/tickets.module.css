@@ -50,12 +50,28 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .card:hover {
   transform: translateY(-8px);
   border-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .raceName {
@@ -140,6 +156,8 @@
   padding: 4rem 2rem;
   text-align: center;
   margin-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .ticketGrid {

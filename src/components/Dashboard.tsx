@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Dashboard.module.css";
 import { fetchCurrentStandings, fetchRaceSchedule, fetchConstructorStandings, fetchLastRaceResults, fetchLapTimes } from "@/lib/jolpica";
 
@@ -178,6 +179,14 @@ export default function Dashboard() {
               <p><strong>Date:</strong> {new Date(nextRace.date).toLocaleDateString()}</p>
               <p><strong>Circuit:</strong> {nextRace.Circuit.circuitName}</p>
               <p><strong>Location:</strong> {nextRace.Circuit.Location.locality}, {nextRace.Circuit.Location.country}</p>
+              <div style={{ marginTop: '2rem', textAlign: 'center', flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <img 
+                  src={`/images/circuits/${nextRace.Circuit.circuitId}.svg`} 
+                  alt={`${nextRace.Circuit.circuitName} Layout`}
+                  style={{ width: '90%', maxHeight: '280px', objectFit: 'contain', opacity: 0.8 }}
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                />
+              </div>
             </div>
           ) : (
             <p>No upcoming races.</p>

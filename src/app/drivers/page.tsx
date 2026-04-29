@@ -48,30 +48,53 @@ export default async function DriversPage() {
         </div>
         <h1 className={globalStyles.title} style={{ fontSize: '2.5rem', marginBottom: '3rem' }}>Grid Breakdown</h1>
         
-        {sortedTeams.map(teamName => (
-          <section key={teamName} className={styles.teamSection}>
-            <div className={styles.teamHeader}>
-              <h2 className={styles.teamName}>{teamName}</h2>
-              <span className={styles.h2hBadge}>{getQualifyingH2H(teamName)}</span>
-            </div>
-            
-            <div className={styles.grid}>
-              {teams[teamName].map((standing: any) => {
-                const driver = standing.Driver;
-                
-                return (
-                  <DriverCard
-                    key={driver.driverId}
-                    driver={driver}
-                    currentPoints={standing.points}
-                    currentWins={standing.wins}
-                    currentPosition={standing.position}
-                  />
-                );
-              })}
-            </div>
-          </section>
-        ))}
+        {sortedTeams.map(teamName => {
+          const firstDriver = teams[teamName][0];
+          const constructorId = firstDriver.Constructors[0]?.constructorId;
+          
+          const teamColors: Record<string, string> = {
+            'red_bull': '#3671C6',
+            'mercedes': '#27F4D2',
+            'ferrari': '#E80020',
+            'mclaren': '#FF8000',
+            'aston_martin': '#229971',
+            'alpine': '#0093CC',
+            'haas': '#B6BABD',
+            'williams': '#64C4FF',
+            'rb': '#6692FF',
+            'sauber': '#52E252',
+            'audi': '#E11B22',
+            'cadillac': '#FFD700'
+          };
+          
+          const teamColor = teamColors[constructorId] || 'var(--f1-red)';
+
+          return (
+            <section key={teamName} className={styles.teamSection}>
+              <div className={styles.teamHeader}>
+                <h2 className={styles.teamName}>{teamName}</h2>
+                <span className={styles.h2hBadge}>{getQualifyingH2H(teamName)}</span>
+              </div>
+              
+              <div className={styles.grid}>
+                {teams[teamName].map((standing: any) => {
+                  const driver = standing.Driver;
+                  
+                  return (
+                    <DriverCard
+                      key={driver.driverId}
+                      driver={driver}
+                      currentPoints={standing.points}
+                      currentWins={standing.wins}
+                      currentPosition={standing.position}
+                      teamColor={teamColor}
+                    />
+                  );
+                })}
+              </div>
+            </section>
+          );
+        })}
       </main>
     </div>
   );

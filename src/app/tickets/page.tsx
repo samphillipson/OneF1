@@ -39,29 +39,48 @@ export default async function TicketsPage() {
         </div>
       ) : (
         <div className={styles.grid}>
-          {upcomingRaces.map((race: any) => (
-            <Link href={`/tickets/${race.round}`} key={race.round} className={styles.card}>
-              <h2 className={styles.raceName}>{race.raceName}</h2>
-              <div className={styles.date}>
-                <Calendar size={14} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} />
-                {new Date(race.date).toLocaleDateString(undefined, { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' })}
-              </div>
-              <div className={styles.location}>
-                <MapPin size={14} />
-                {race.Circuit.Location.locality}, {race.Circuit.Location.country}
-              </div>
-              <div className={styles.circuit}>
-                {race.Circuit.circuitName}
-              </div>
-              
-              <div className={styles.footer}>
-                <span className={styles.roundBadge}>Round {race.round}</span>
-                <span className={styles.viewBtn}>
-                  View Tickets <ArrowRight size={16} />
-                </span>
-              </div>
-            </Link>
-          ))}
+          {upcomingRaces.map((race: any) => {
+            const countryCodeMap: Record<string, string> = {
+              "USA": "us", "United States": "us", "UK": "gb", "Great Britain": "gb",
+              "Italy": "it", "Monaco": "mc", "Spain": "es", "Canada": "ca",
+              "Austria": "at", "Belgium": "be", "Netherlands": "nl", "Singapore": "sg",
+              "Japan": "jp", "Qatar": "qa", "UAE": "ae", "Abu Dhabi": "ae",
+              "Saudi Arabia": "sa", "Bahrain": "bh", "Australia": "au", "China": "cn",
+              "Azerbaijan": "az", "Hungary": "hu", "Brazil": "br", "Mexico": "mx"
+            };
+            const countryCode = countryCodeMap[race.Circuit.Location.country] || "un";
+
+            return (
+              <Link href={`/tickets/${race.round}`} key={race.round} className={styles.card}>
+                <img 
+                  src={`https://flagcdn.com/${countryCode}.svg`} 
+                  alt={`${race.Circuit.Location.country} Flag`} 
+                  className={styles.watermark} 
+                />
+                <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', gap: '1.5rem', height: '100%' }}>
+                  <h2 className={styles.raceName}>{race.raceName}</h2>
+                  <div className={styles.date}>
+                    <Calendar size={14} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} />
+                    {new Date(race.date).toLocaleDateString(undefined, { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' })}
+                  </div>
+                  <div className={styles.location}>
+                    <MapPin size={14} />
+                    {race.Circuit.Location.locality}, {race.Circuit.Location.country}
+                  </div>
+                  <div className={styles.circuit}>
+                    {race.Circuit.circuitName}
+                  </div>
+                  
+                  <div className={styles.footer}>
+                    <span className={styles.roundBadge}>Round {race.round}</span>
+                    <span className={styles.viewBtn}>
+                      View Tickets <ArrowRight size={16} />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       )}
     </div>
