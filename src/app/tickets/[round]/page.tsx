@@ -140,9 +140,26 @@ export default async function RaceTicketPage({ params }: { params: { round: stri
               ))}
             </ul>
 
-            <BuyButton tier={tier.name} />
+            <BuyButton 
+              tier={tier.name} 
+              price={parseInt(tier.price.replace(/[^0-9.-]+/g,""))}
+              raceRound={race.round}
+              raceName={race.raceName}
+            />
           </div>
         ))}
+      </div>
+
+      <div style={{ textAlign: 'center', marginTop: '3rem', color: '#a0a0a0', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+        <span style={{ display: 'flex', alignItems: 'flex-start' }}>
+          <img 
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/250px-Stripe_Logo%2C_revised_2016.svg.png" 
+            alt="Stripe" 
+            style={{ height: '24px' }} 
+          />
+          <sup style={{ fontSize: '0.6em', marginLeft: '2px' }}>&reg;</sup>
+        </span>
+        <span>Payment-Processing System</span>
       </div>
     </div>
   );

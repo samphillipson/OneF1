@@ -105,13 +105,31 @@ export default function Dashboard() {
       <div className={styles.grid}>
         {/* Standings Card */}
         <div className={`glass-panel ${styles.card}`}>
-          <div className={styles.cardHeader}>
-            <h3>{showConstructors ? "Constructor" : "Driver"} Standings</h3>
+          <h3>Standings</h3>
+          <div className={styles.cardHeader} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', paddingBottom: '1.2rem', borderBottom: '1px solid rgba(255, 255, 255, 0.1)' }}>
             <button 
               className={styles.toggleBtn}
-              onClick={() => setShowConstructors(!showConstructors)}
+              style={{
+                padding: '0.8rem',
+                fontSize: '0.95rem',
+                letterSpacing: '0.05em',
+                ...(!showConstructors ? { background: 'var(--f1-red)', color: 'white', borderColor: 'var(--f1-red)' } : {})
+              }}
+              onClick={() => setShowConstructors(false)}
             >
-              Switch to {showConstructors ? "Drivers" : "Teams"}
+              Drivers
+            </button>
+            <button 
+              className={styles.toggleBtn}
+              style={{
+                padding: '0.8rem',
+                fontSize: '0.95rem',
+                letterSpacing: '0.05em',
+                ...(showConstructors ? { background: 'var(--f1-red)', color: 'white', borderColor: 'var(--f1-red)' } : {})
+              }}
+              onClick={() => setShowConstructors(true)}
+            >
+              Constructors
             </button>
           </div>
           
@@ -139,9 +157,6 @@ export default function Dashboard() {
               })}
             </ul>
           )}
-          <Link href="/drivers" className={styles.actionBtn}>
-            Full Standings
-          </Link>
         </div>
 
         {/* Latest Race Results Card */}

@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/auth";
+import Footer from "@/components/Footer";
+import { CartProvider } from "@/components/CartContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,9 +23,14 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Header session={session} />
-        {children}
+      <body className={inter.className} style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <CartProvider>
+          <Header session={session} />
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+            {children}
+          </div>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

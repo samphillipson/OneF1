@@ -32,7 +32,14 @@ export default function PrivacyPolicy() {
           <section style={{ marginBottom: '2rem' }}>
             <h2 style={{ color: 'var(--f1-red)', marginBottom: '1rem' }}>4. AI and Third Parties</h2>
             <p style={{ opacity: 0.8, lineHeight: '1.6' }}>
-              Our AI Assistant is powered by Google Gemini. Your queries are sent to Google for processing. Please refer to Google's Privacy Policy for more information on how they handle data.
+              Our AI Assistant is powered by Google Gemini&trade;. Your queries are sent to Google for processing. Please refer to Google's Privacy Policy for more information on how they handle data.
+            </p>
+          </section>
+
+          <section style={{ marginBottom: '2rem' }}>
+            <h2 style={{ color: 'var(--f1-red)', marginBottom: '1rem' }}>5. Payment Information</h2>
+            <p style={{ opacity: 0.8, lineHeight: '1.6' }}>
+              Because this is an educational project, we use the <span style={{ whiteSpace: 'nowrap' }}><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/250px-Stripe_Logo%2C_revised_2016.svg.png" alt="Stripe" style={{ height: '1.2em', verticalAlign: 'middle', margin: '0 4px' }} /><sup style={{ fontSize: '0.7em' }}>&reg;</sup></span> test environment for simulating checkouts. We do not process, collect, or store any real credit card data or financial information. Please do not enter real payment details anywhere on this site.
             </p>
           </section>
 
@@ -44,13 +51,6 @@ export default function PrivacyPolicy() {
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <div className={styles.footerContent}>
-          <p className={styles.disclaimer}>
-            <strong>Disclaimer:</strong> This is an unofficial fan application. F1, FORMULA ONE, FORMULA 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX and related marks are trade marks of Formula One Licensing B.V.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

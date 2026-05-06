@@ -36,6 +36,13 @@ export default function TermsOfService() {
             </p>
           </section>
 
+          <section style={{ marginBottom: '2rem' }}>
+            <h2 style={{ color: 'var(--f1-red)', marginBottom: '1rem' }}>5. Simulated E-Commerce & Payments</h2>
+            <p style={{ opacity: 0.8, lineHeight: '1.6' }}>
+              All ticket purchases on this platform are strictly simulated for educational purposes as part of a university project. No real tickets are issued, and no real monetary transactions take place. Payment processing is simulated using the <span style={{ whiteSpace: 'nowrap' }}><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/250px-Stripe_Logo%2C_revised_2016.svg.png" alt="Stripe" style={{ height: '1.2em', verticalAlign: 'middle', margin: '0 4px' }} /><sup style={{ fontSize: '0.7em' }}>&reg;</sup></span> test environment.
+            </p>
+          </section>
+
           <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
             <Link href="/" className={styles.backButton}>
               ← Back to Dashboard
@@ -44,13 +51,6 @@ export default function TermsOfService() {
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <div className={styles.footerContent}>
-          <p className={styles.disclaimer}>
-            <strong>Disclaimer:</strong> This is an unofficial fan application. F1, FORMULA ONE, FORMULA 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX and related marks are trade marks of Formula One Licensing B.V.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

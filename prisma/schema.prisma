@@ -3,18 +3,41 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
+  provider = "postgresql"
 }
 
 model User {
-  id                String   @id @default(cuid())
-  email             String   @unique
-  username          String?  @unique
-  passwordHash      String
-  isVerified         Boolean   @default(false)
-  verificationToken  String?   @unique
-  resetPasswordToken String?   @unique
+  id                   String    @id @default(cuid())
+  email                String    @unique
+  username             String?   @unique
+  passwordHash         String
+  isVerified           Boolean   @default(false)
+  verificationToken    String?   @unique
+  resetPasswordToken   String?   @unique
   resetPasswordExpires DateTime?
-  createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @updatedAt
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+  orders               Order[]
+}
+
+model Order {
+  id          String      @id @default(cuid())
+  userId      String
+  user        User        @relation(fields: [userId], references: [id])
+  totalAmount Float
+  status      String      @default("COMPLETED")
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  items       OrderItem[]
+}
+
+model OrderItem {
+  id         String @id @default(cuid())
+  orderId    String
+  order      Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  raceRound  String
+  raceName   String
+  ticketTier String
+  price      Float
+  quantity   Int
 }

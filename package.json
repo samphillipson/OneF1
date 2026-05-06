@@ -13,6 +13,7 @@
     "@google/generative-ai": "latest",
     "@prisma/adapter-pg": "^7.7.0",
     "@prisma/client": "^7.7.0",
+    "@stripe/stripe-js": "^9.4.0",
     "bcryptjs": "^3.0.3",
     "dotenv": "^17.4.2",
     "lucide-react": "^0.378.0",
@@ -23,7 +24,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "resend": "^6.12.2",
-    "sharp": "^0.34.5"
+    "sharp": "^0.34.5",
+    "stripe": "^22.1.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",

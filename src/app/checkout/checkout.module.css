@@ -1,0 +1,67 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  color: white;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.submitBtn {
+  width: 100%;
+  background: var(--f1-red);
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: #cc0000;
+}
+
+.submitBtn:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 1rem;
+  text-align: center;
+  color: #00e676; /* Green for success */
+}
+
+.error {
+  margin-top: 1rem;
+  text-align: center;
+  color: #ff4444;
+}

@@ -1,43 +1,18 @@
 {
   "gasly": {
-    "personal": "Born in Rouen, France, Pierre Gasly is the youngest of five brothers in a family where racing was a shared heritage; his grandfather, grandmother, and father were all accomplished karting competitors. This lineage saw him begin racing at age six, eventually moving away from home at thirteen to refine his craft in Le Mans. Outside of the cockpit, Gasly is a dedicated Paris Saint-Germain supporter and an enthusiast of fashion and design, often seen collaborating with luxury brands and participating in high-level padel tournaments.",
-    "career": "Gasly entered Formula 1 with a stellar junior record, including titles in the Formula Renault 2.0 Eurocup and the GP2 Series. After a mid-season demotion from Red Bull Racing in 2019, he showcased immense resilience by securing a breakthrough podium in Brazil and a legendary victory at the 2020 Italian Grand Prix with AlphaTauri. Since joining Alpine in 2023, he has continued to cement his status as a top-tier driver, recently achieving a memorable podium at the 2024 Sao Paulo Grand Prix to further his legacy as France's modern F1 star.",
+    "personal": "Pierre Gasly was born in Rouen, France, into a family with deep roots in motorsport; his grandfather, father, and brothers all competed in karting or racing. He began karting at age six and eventually moved to Le Mans as a teenager to pursue a professional career within the French driving school system. Outside of racing, Gasly is a devoted supporter of Paris Saint-Germain football club and maintains a keen interest in high fashion and music. He is also widely known for his close friendship with the late Anthoine Hubert, which has remained a central emotional touchstone throughout his life and career.",
+    "career": "Gasly’s ascent to Formula 1 was highlighted by his 2016 GP2 Series title and a successful stint in Japan's Super Formula before debuting with Toro Rosso in late 2017. His career is most famous for a resilient comeback; after being demoted from Red Bull Racing mid-way through 2019, he secured an emotional maiden victory at the 2020 Italian Grand Prix with AlphaTauri, becoming France's first winner in 24 years. Having moved to the Alpine factory team in 2023, Gasly has continued to build his legacy as a consistent podium finisher and a key leader for the French national project in F1.",
     "stats": {
       "titles": "0",
       "wins": "1",
-      "podiums": "5",
+      "podiums": "4",
       "bestFinish": "1st"
     },
     "history": [
       {
-        "season": "2024",
-        "team": "Alpine",
-        "position": "P12"
-      },
-      {
-        "season": "2023",
-        "team": "Alpine",
-        "position": "P11"
-      },
-      {
-        "season": "2022",
-        "team": "AlphaTauri",
-        "position": "P14"
-      },
-      {
-        "season": "2021",
-        "team": "AlphaTauri",
-        "position": "P9"
-      },
-      {
-        "season": "2020",
-        "team": "AlphaTauri",
-        "position": "P10"
-      },
-      {
-        "season": "2019",
-        "team": "Red Bull / Toro Rosso",
-        "position": "P7"
+        "season": "2017",
+        "team": "Toro Rosso",
+        "position": "P21"
       },
       {
         "season": "2018",
@@ -45,12 +20,37 @@
         "position": "P15"
       },
       {
-        "season": "2017",
-        "team": "Toro Rosso",
-        "position": "P21"
+        "season": "2019",
+        "team": "Red Bull / Toro Rosso",
+        "position": "P7"
+      },
+      {
+        "season": "2020",
+        "team": "AlphaTauri",
+        "position": "P10"
+      },
+      {
+        "season": "2021",
+        "team": "AlphaTauri",
+        "position": "P9"
+      },
+      {
+        "season": "2022",
+        "team": "AlphaTauri",
+        "position": "P14"
+      },
+      {
+        "season": "2023",
+        "team": "Alpine",
+        "position": "P11"
+      },
+      {
+        "season": "2024",
+        "team": "Alpine",
+        "position": "P15"
       }
     ],
-    "timestamp": 1777299288753
+    "timestamp": 1778056933483
   },
   "arvid_lindblad": {
     "personal": "Arvid Lindblad was born on August 8, 2007, in London, England, and possesses dual British and Swedish citizenship, though he competes professionally under the British banner. Growing up in a household where his father, Peter, encouraged his competitive drive, Lindblad began karting at age five and quickly developed a reputation for clinical speed and tactical awareness. Beyond the racetrack, the young driver is a dedicated student who enjoys staying active through various sports, maintaining a high level of physical fitness and mental conditioning to balance the intense pressure of being a high-profile athlete within the Red Bull program.",
