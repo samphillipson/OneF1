@@ -258,6 +258,7 @@
   font-size: 0.8rem;
   cursor: pointer;
   transition: var(--transition);
+  font-family: inherit;
 }
 
 .insightBtn:hover:not(:disabled) {

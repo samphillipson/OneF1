@@ -97,7 +97,16 @@ export default function Dashboard() {
 
       {aiInsight && (
         <div className={`glass-panel ${styles.aiCard}`}>
-          <div className={styles.aiBadge}>AI STRATEGY INSIGHT</div>
+          <div className={styles.aiBadge} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <div style={{ width: '18px', height: '18px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', flexShrink: 0 }}>
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Google_Gemini_logo_2025.svg/250px-Google_Gemini_logo_2025.svg.png" 
+                alt="Gemini Star" 
+                style={{ height: '100%', width: 'auto', objectFit: 'cover', objectPosition: '0% center', filter: 'brightness(1.2)' }}
+              />
+            </div>
+            AI STRATEGY INSIGHT
+          </div>
           <p>{aiInsight}</p>
         </div>
       )}
