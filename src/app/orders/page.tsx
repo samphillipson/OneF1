@@ -61,7 +61,7 @@ export default async function OrdersPage() {
                       </div>
                     </div>
                     <div className={styles.itemPrice}>
-                      ${(item.price * item.quantity).toLocaleString()}
+                      £{(item.price * item.quantity).toLocaleString()}
                     </div>
                   </div>
                 ))}
@@ -69,7 +69,7 @@ export default async function OrdersPage() {
 
               <div className={styles.orderFooter}>
                 <div className={styles.orderTotal}>
-                  Total: ${order.totalAmount.toLocaleString()}
+                  Total: £{order.totalAmount.toLocaleString()}
                 </div>
               </div>
             </div>

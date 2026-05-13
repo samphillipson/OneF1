@@ -98,7 +98,7 @@ export default function CheckoutPage() {
       <div className={styles.box}>
         <div className={styles.totalRow}>
           <span>Total to Pay:</span>
-          <span>${total.toLocaleString()}</span>
+          <span>£{total.toLocaleString()}</span>
         </div>
 
         <p style={{ marginBottom: '2rem', color: '#a0a0a0', textAlign: 'center' }}>

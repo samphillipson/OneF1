@@ -19,7 +19,7 @@ export async function POST(req: Request) {
     }
 
     const ai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = ai.getGenerativeModel({ model: "gemini-flash-latest" });
+    const model = ai.getGenerativeModel({ model: "gemini-2.5-flash" });
     
     // Fetch real-time F1 context
     let contextStr = "";

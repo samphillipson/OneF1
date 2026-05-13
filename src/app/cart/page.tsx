@@ -32,7 +32,7 @@ export default function CartPage() {
                   <p>Quantity: {item.quantity}</p>
                 </div>
                 <div className={styles.itemActions}>
-                  <div className={styles.price}>${item.price.toLocaleString()}</div>
+                  <div className={styles.price}>£{item.price.toLocaleString()}</div>
                   <button 
                     onClick={() => removeItem(item.id)}
                     className={styles.removeBtn}
@@ -45,7 +45,7 @@ export default function CartPage() {
           </div>
 
           <div className={styles.summary}>
-            <div className={styles.total}>Total: ${total.toLocaleString()}</div>
+            <div className={styles.total}>Total: £{total.toLocaleString()}</div>
             <Link href="/checkout" className={styles.checkoutBtn}>
               Proceed to Checkout
             </Link>

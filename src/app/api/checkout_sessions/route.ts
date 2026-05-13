@@ -43,7 +43,7 @@ export async function POST(request: Request) {
 
     const line_items = items.map((item: any) => ({
       price_data: {
-        currency: 'usd',
+        currency: 'gbp',
         product_data: {
           name: `${item.raceName} (Round ${item.raceRound})`,
           description: `${item.ticketTier} Ticket`,

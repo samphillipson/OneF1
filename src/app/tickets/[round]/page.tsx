@@ -39,7 +39,7 @@ export default async function RaceTicketPage({ params }: { params: { round: stri
     {
       id: "ga",
       name: "General Admission",
-      price: "$199",
+      price: "£199",
       features: [
         "Trackside viewing",
         "Access to fan zones",
@@ -50,7 +50,7 @@ export default async function RaceTicketPage({ params }: { params: { round: stri
     {
       id: "gs",
       name: "Grandstand Seating",
-      price: "$499",
+      price: "£499",
       features: [
         "Reserved seating",
         "Excellent track views",
@@ -61,7 +61,7 @@ export default async function RaceTicketPage({ params }: { params: { round: stri
     {
       id: "vip",
       name: "Paddock Club™ VIP",
-      price: "$4,500",
+      price: "£4,500",
       features: [
         "Exclusive Paddock views",
         "Pit lane walk access",
