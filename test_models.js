@@ -19,6 +19,7 @@ async function main() {
     "gemini-2.0-flash",
     "gemini-2.0-flash-exp",
     "gemini-2.0-pro-exp-02-05",
+    "gemini-3.1-flash-lite",
     "gemini-pro"
   ];
   
