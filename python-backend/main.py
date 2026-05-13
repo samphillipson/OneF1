@@ -20,8 +20,29 @@ CACHE_DIR = os.path.join(os.path.dirname(__file__), 'cache')
 os.makedirs(CACHE_DIR, exist_ok=True)
 fastf1.Cache.enable_cache(CACHE_DIR)
 
+PROCESSED_CACHE_DIR = os.path.join(CACHE_DIR, 'processed')
+os.makedirs(PROCESSED_CACHE_DIR, exist_ok=True)
+
 @app.get("/api/telemetry")
 async def get_telemetry(year: int = 2024, race: str = "Bahrain", session: str = "R", driver: str = "VER", driver2: str = None):
+    # Setup cache file path
+    cache_filename = f"{year}_{race.replace(' ', '_')}_{session}_{driver}_{driver2 or 'None'}.json"
+    cache_path = os.path.join(PROCESSED_CACHE_DIR, cache_filename)
+    
+    # Try loading from processed JSON cache
+    if os.path.exists(cache_path):
+        try:
+            print(f"Returning cached processed JSON: {cache_filename}")
+            import json
+            with open(cache_path, 'r') as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"Failed to read cache file {cache_filename}, deleting: {e}")
+            try:
+                os.remove(cache_path)
+            except:
+                pass
+
     try:
         # Load the session using FastF1
         f1_session = fastf1.get_session(year, race, session)
@@ -75,11 +96,22 @@ async def get_telemetry(year: int = 2024, race: str = "Bahrain", session: str = 
             
         driver2_result = process_driver(driver2) if driver2 and driver2 != "None" else None
 
-        return {
+        result = {
             "session": f"{year} {race}",
             "driver1": {"name": driver, "data": driver1_result["telemetry"], "lap_time": driver1_result["lap_time"]},
             "driver2": {"name": driver2, "data": driver2_result["telemetry"], "lap_time": driver2_result["lap_time"]} if driver2_result else None
         }
+        
+        # Save to processed JSON cache
+        try:
+            import json
+            with open(cache_path, 'w') as f:
+                json.dump(result, f)
+            print(f"Successfully cached processed JSON: {cache_filename}")
+        except Exception as ce:
+            print(f"Failed to save cache file {cache_filename}: {ce}")
+            
+        return result
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
