@@ -31,7 +31,7 @@ const RACES = [
 export default function TelemetryDashboard() {
   const [year, setYear] = useState('2024');
   const [race, setRace] = useState('Bahrain');
-  const [session, setSession] = useState('Q');
+  const [session, setSession] = useState('R');
   const [driver, setDriver] = useState('VER');
   const [driver2, setDriver2] = useState('None');
   
