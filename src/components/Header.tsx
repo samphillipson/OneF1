@@ -62,7 +62,7 @@ export default function Header({ session }: HeaderProps) {
         <Link href="/" className={styles.navLink}>Dashboard</Link>
         <Link href="/drivers" className={styles.navLink}>Drivers</Link>
         <Link href="/circuits" className={styles.navLink}>Circuits</Link>
-        <Link href="/telemetry" className={styles.navLink}>Analytics</Link>
+        <Link href="/analytics" className={styles.navLink}>Analytics</Link>
         <Link href="/tickets" className={styles.navLink}>Tickets</Link>
         <Link href="/orders" className={styles.navLink}>Orders</Link>
         <Link href="/#chat" className={styles.navLink}>AI Assistant</Link>
