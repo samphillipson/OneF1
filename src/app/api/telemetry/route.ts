@@ -9,7 +9,8 @@ export async function GET(req: Request) {
     const driver = searchParams.get('driver') || 'VER';
     const driver2 = searchParams.get('driver2');
 
-    let backendUrl = `http://127.0.0.1:8000/api/telemetry?year=${year}&race=${encodeURIComponent(race)}&session=${session}&driver=${driver}`;
+    const pythonBackendUrl = process.env.PYTHON_BACKEND_URL || 'http://127.0.0.1:8000';
+    let backendUrl = `${pythonBackendUrl}/api/telemetry?year=${year}&race=${encodeURIComponent(race)}&session=${session}&driver=${driver}`;
     if (driver2 && driver2 !== 'None') {
       backendUrl += `&driver2=${driver2}`;
     }
