@@ -31,7 +31,7 @@ const RACES = [
 export default function TelemetryDashboard() {
   const [year, setYear] = useState('2024');
   const [race, setRace] = useState('Bahrain');
-  const [session, setSession] = useState('R');
+  const [session, setSession] = useState('Q');
   const [driver, setDriver] = useState('VER');
   const [driver2, setDriver2] = useState('None');
   
@@ -210,6 +210,11 @@ export default function TelemetryDashboard() {
         <div className={styles.chartCard} style={{ textAlign: 'center', padding: '4rem', borderLeft: '4px solid #ff4444' }}>
           <h3 style={{ color: '#ff4444', marginBottom: '1rem' }}>Data Error</h3>
           <p style={{ color: 'rgba(255,255,255,0.8)' }}>{error}</p>
+          {session === 'R' && (
+            <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem', marginTop: '1.5rem', lineHeight: '1.4' }}>
+              💡 <b>Tip for Free Hosting Tiers:</b> Full 2-hour <b>Race</b> telemetry datasets contain millions of data points for all 20 drivers and can exceed the 512MB RAM limit on free plans (like Render Free), resulting in a Gateway error. Try selecting <b>Qualifying</b> or a <b>Practice</b> session instead—they load instantly and work beautifully!
+            </p>
+          )}
         </div>
       )}
 

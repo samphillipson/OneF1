@@ -83,6 +83,9 @@ async def get_telemetry(year: int = 2024, race: str = "Bahrain", session: str = 
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        import gc
+        gc.collect()
 
 if __name__ == "__main__":
     import uvicorn
