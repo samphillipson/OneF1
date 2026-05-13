@@ -49,7 +49,7 @@ export default function TelemetryDashboard() {
     setTelemetryData(null);
 
     try {
-      const url = `http://127.0.0.1:8000/api/telemetry?year=${year}&race=${encodeURIComponent(race)}&session=${session}&driver=${driver}&driver2=${driver2}`;
+      const url = `/api/telemetry?year=${year}&race=${encodeURIComponent(race)}&session=${session}&driver=${driver}&driver2=${driver2}`;
       const res = await fetch(url, { cache: 'no-store' });
       const data = await res.json();
 
