@@ -40,13 +40,17 @@ export default async function DriversPage() {
 
   return (
     <div className={styles.container} style={{ paddingTop: '2rem' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', marginBottom: '2rem' }}>
+        <Link href="/" className={globalStyles.backButton}>
+          ← Back to Dashboard
+        </Link>
+      </div>
+
+      <header className={styles.header}>
+        <h1 className={globalStyles.title} style={{ fontSize: '3.5rem' }}>Grid Breakdown</h1>
+      </header>
+
       <main className={styles.content}>
-        <div style={{ marginBottom: '2rem' }}>
-          <Link href="/" className={globalStyles.backButton}>
-            ← Back to Dashboard
-          </Link>
-        </div>
-        <h1 className={globalStyles.title} style={{ fontSize: '2.5rem', marginBottom: '3rem' }}>Grid Breakdown</h1>
         
         {sortedTeams.map(teamName => {
           const firstDriver = teams[teamName][0];

@@ -11,17 +11,20 @@ export const metadata = {
 export default function TelemetryPage() {
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <Link href="/" className="backButton" style={{ marginBottom: '2rem', display: 'inline-block' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto 2rem auto', width: '100%' }}>
+        <Link href="/" className="backButton">
           &larr; Back to Dashboard
         </Link>
+      </div>
+
+      <header className={styles.header}>
         <h1 className={styles.title}>
           FastF1 Telemetry Analysis
         </h1>
         <p className={styles.subtitle}>
           Interactive high-fidelity data pipeline powered by Python, Pandas, and FastF1
         </p>
-      </div>
+      </header>
 
       <TelemetryDashboard />
     </div>

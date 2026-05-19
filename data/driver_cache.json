@@ -183,8 +183,8 @@
     "timestamp": 1777299835095
   },
   "colapinto": {
-    "personal": "Franco Colapinto was born on May 27, 2003, in Pilar, Buenos Aires, and stands as the first Argentine driver to compete in Formula 1 in over two decades. His passion for speed was influenced by his father, Aníbal, who was a competitor and team owner in Argentina’s domestic racing scene. At just 14 years old, Franco moved to Europe alone to live in a karting factory in Italy, a sacrifice that defined his early career. Beyond the track, he is a fervent supporter of the Boca Juniors football club and has become a viral sensation for his charismatic personality and unfiltered wit in media interviews.",
-    "career": "Colapinto’s ascent through the junior categories was fueled by a dominant title in the 2019 Spanish F4 Championship, followed by race-winning campaigns in FIA Formula 3 and Formula 2 with MP Motorsport. As a standout member of the Williams Racing Driver Academy, he was unexpectedly promoted mid-season to replace Logan Sargeant at Williams for the 2024 Italian Grand Prix. He reached a historic milestone at the 2024 Azerbaijan Grand Prix, finishing eighth to become the first Argentine to score Formula 1 points since Carlos Reutemann in 1982, quickly cementing his reputation as a formidable talent on the grid.",
+    "personal": "Born on May 27, 2003, in Pilar, Argentina, Franco Colapinto is the first Argentine to race in Formula 1 in over two decades. His father, Aníbal Colapinto, was a competitor in local midget racing, fostering Franco’s early interest before the youngster moved to Europe alone at age 14 to live above a karting factory and pursue his professional dreams. Beyond the track, he is a passionate supporter of the Boca Juniors football club and enjoys cycling and padel, while his charismatic personality and digital presence have made him a massive cultural sensation in his home country.",
+    "career": "Colapinto’s path to the grid included a 2019 Spanish F4 title and multiple victories in FIA Formula 3 and Formula 2, eventually leading him to the Williams Driver Academy. In a landmark mid-season move in 2024, Williams Racing promoted him to replace Logan Sargeant, where he immediately impressed by securing an eighth-place finish in just his second race at Baku. Known for his technical maturity and aggressive overtaking, his debut marks a historic milestone for Argentine motorsport and signals his arrival as a legitimate talent capable of competing at the sport's highest level.",
     "stats": {
       "titles": "0",
       "wins": "0",
@@ -194,11 +194,11 @@
     "history": [
       {
         "season": "2024",
-        "team": "Williams",
-        "position": "P19"
+        "team": "Williams Racing",
+        "position": "P18"
       }
     ],
-    "timestamp": 1777299914121
+    "timestamp": 1779185009069
   },
   "hulkenberg": {
     "personal": "Born in Emmerich am Rhein, West Germany, in 1987, Nico Hülkenberg began karting at age ten, quickly demonstrating the clinical precision that would define his professional style. Unlike many of his peers from deep-rooted racing dynasties, Hülkenberg’s path was forged through the logistical support of his father, Klaus, who operated a shipping company. Outside the cockpit, the polyglot athlete—fluent in German, Dutch, and English—is an avid fan of tennis and cycling, often seen training near his home in Monaco where he resides with his wife, Egle, and their daughter. He is affectionately known as 'The Hulk,' a moniker reflecting both his name and his formidable physical presence on the grid.",
@@ -497,5 +497,68 @@
       }
     ],
     "timestamp": 1777300138853
+  },
+  "sainz": {
+    "personal": "Born in Madrid, Spain, Carlos Sainz Jr. is the son of the legendary two-time World Rally Champion and Dakar Rally winner Carlos Sainz Sr. This prestigious racing lineage deeply influenced his early development, instilling a methodical and analytical approach to competition from a young age. Beyond the cockpit, Sainz is an avid golfer with a single-digit handicap and a dedicated supporter of Real Madrid, often balancing his rigorous physical training with a passion for strategic sports and spending time with his family in his native Spain.",
+    "career": "Sainz entered Formula 1 in 2015 with Toro Rosso after clinching the Formula Renault 3.5 championship as a member of the Red Bull Junior Team. His career is defined by technical precision and steady growth across tenures at Renault, McLaren—where he secured his first podium—and Scuderia Ferrari. His most significant milestones include his maiden victory at the 2022 British Grand Prix and a masterful win at the 2023 Singapore Grand Prix, which stood as the only non-Red Bull triumph of that entire season.",
+    "stats": {
+      "titles": "0",
+      "wins": "3",
+      "podiums": "23",
+      "bestFinish": "1st"
+    },
+    "history": [
+      {
+        "season": "2015",
+        "team": "Toro Rosso",
+        "position": "P15"
+      },
+      {
+        "season": "2016",
+        "team": "Toro Rosso",
+        "position": "P12"
+      },
+      {
+        "season": "2017",
+        "team": "Toro Rosso / Renault",
+        "position": "P9"
+      },
+      {
+        "season": "2018",
+        "team": "Renault",
+        "position": "P10"
+      },
+      {
+        "season": "2019",
+        "team": "McLaren",
+        "position": "P6"
+      },
+      {
+        "season": "2020",
+        "team": "McLaren",
+        "position": "P6"
+      },
+      {
+        "season": "2021",
+        "team": "Ferrari",
+        "position": "P5"
+      },
+      {
+        "season": "2022",
+        "team": "Ferrari",
+        "position": "P5"
+      },
+      {
+        "season": "2023",
+        "team": "Ferrari",
+        "position": "P7"
+      },
+      {
+        "season": "2024",
+        "team": "Ferrari",
+        "position": "P5"
+      }
+    ],
+    "timestamp": 1779190887750
   }
 }

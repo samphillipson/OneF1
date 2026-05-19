@@ -5,7 +5,8 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, User } from 'lucide-react';
 import { signOut } from 'next-auth/react';
-import styles from '../auth.module.css';
+import authStyles from '../auth.module.css';
+import styles from './account.module.css';
 
 interface AccountClientProps {
   user: {
@@ -136,18 +137,18 @@ export default function AccountClient({ user }: AccountClientProps) {
           <p className={styles.subtitle}>{user.email}</p>
         </div>
 
-        {error && <div className={styles.error}>{error}</div>}
-        {success && <div className={styles.success}>{success}</div>}
+        {error && <div className={authStyles.error}>{error}</div>}
+        {success && <div className={authStyles.success}>{success}</div>}
 
-        <div className={styles.divider}>Change Username</div>
+        <div className={authStyles.divider}>Change Username</div>
 
-        <form className={styles.form} onSubmit={handleUsernameSubmit}>
-          <div className={styles.inputGroup}>
-            <label className={styles.label} htmlFor="newUsername">New Username</label>
+        <form className={authStyles.form} onSubmit={handleUsernameSubmit}>
+          <div className={authStyles.inputGroup}>
+            <label className={authStyles.label} htmlFor="newUsername">New Username</label>
             <input
               id="newUsername"
               type="text"
-              className={styles.input}
+              className={authStyles.input}
               placeholder="f1fan123"
               value={newUsername}
               onChange={(e) => setNewUsername(e.target.value)}
@@ -157,22 +158,22 @@ export default function AccountClient({ user }: AccountClientProps) {
 
           <button 
             type="submit" 
-            className={styles.button}
+            className={authStyles.button}
             disabled={isLoading}
           >
             {isLoading ? 'Updating...' : 'Update Username'}
           </button>
         </form>
 
-        <div className={styles.divider} style={{ marginTop: '2rem' }}>Change Email</div>
+        <div className={authStyles.divider} style={{ marginTop: '2rem' }}>Change Email</div>
 
-        <form className={styles.form} onSubmit={handleEmailSubmit}>
-          <div className={styles.inputGroup}>
-            <label className={styles.label} htmlFor="newEmail">New Email Address</label>
+        <form className={authStyles.form} onSubmit={handleEmailSubmit}>
+          <div className={authStyles.inputGroup}>
+            <label className={authStyles.label} htmlFor="newEmail">New Email Address</label>
             <input
               id="newEmail"
               type="email"
-              className={styles.input}
+              className={authStyles.input}
               placeholder="new@example.com"
               value={newEmail}
               onChange={(e) => setNewEmail(e.target.value)}
@@ -180,12 +181,12 @@ export default function AccountClient({ user }: AccountClientProps) {
             />
           </div>
 
-          <div className={styles.inputGroup}>
-            <label className={styles.label} htmlFor="emailPassword">Current Password (for security)</label>
+          <div className={authStyles.inputGroup}>
+            <label className={authStyles.label} htmlFor="emailPassword">Current Password (for security)</label>
             <input
               id="emailPassword"
               type="password"
-              className={styles.input}
+              className={authStyles.input}
               placeholder="••••••••"
               value={emailPassword}
               onChange={(e) => setEmailPassword(e.target.value)}
@@ -195,22 +196,22 @@ export default function AccountClient({ user }: AccountClientProps) {
 
           <button 
             type="submit" 
-            className={styles.button}
+            className={authStyles.button}
             disabled={isLoading}
           >
             {isLoading ? 'Updating...' : 'Update Email'}
           </button>
         </form>
 
-        <div className={styles.divider} style={{ marginTop: '2rem' }}>Change Password</div>
+        <div className={authStyles.divider} style={{ marginTop: '2rem' }}>Change Password</div>
 
-        <form className={styles.form} onSubmit={handlePasswordSubmit}>
-          <div className={styles.inputGroup}>
-            <label className={styles.label} htmlFor="currentPassword">Current Password</label>
+        <form className={authStyles.form} onSubmit={handlePasswordSubmit}>
+          <div className={authStyles.inputGroup}>
+            <label className={authStyles.label} htmlFor="currentPassword">Current Password</label>
             <input
               id="currentPassword"
               type="password"
-              className={styles.input}
+              className={authStyles.input}
               placeholder="••••••••"
               value={currentPassword}
               onChange={(e) => setCurrentPassword(e.target.value)}
@@ -218,12 +219,12 @@ export default function AccountClient({ user }: AccountClientProps) {
             />
           </div>
 
-          <div className={styles.inputGroup}>
-            <label className={styles.label} htmlFor="newPassword">New Password</label>
+          <div className={authStyles.inputGroup}>
+            <label className={authStyles.label} htmlFor="newPassword">New Password</label>
             <input
               id="newPassword"
               type="password"
-              className={styles.input}
+              className={authStyles.input}
               placeholder="••••••••"
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
@@ -233,7 +234,7 @@ export default function AccountClient({ user }: AccountClientProps) {
 
           <button 
             type="submit" 
-            className={styles.button}
+            className={authStyles.button}
             disabled={isLoading}
           >
             {isLoading ? 'Updating...' : 'Update Password'}

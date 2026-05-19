@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   background-color: var(--f1-dark);
+  overflow-x: hidden;
 }
 
 .header {
@@ -157,6 +158,26 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  padding: 4rem 0;
+  position: relative;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  bottom: -50%;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background-image: url('https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/mercedes/2026mercedescarright.webp');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .title {

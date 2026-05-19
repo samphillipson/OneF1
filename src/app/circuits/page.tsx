@@ -27,16 +27,19 @@ export default async function CircuitsPage() {
 
   return (
     <div className={styles.container} style={{ paddingTop: '2rem' }}>
-      <main className={styles.content}>
-        <div style={{ marginBottom: '1rem' }}>
-          <Link href="/" className={globalStyles.backButton}>
-            ← Back to Dashboard
-          </Link>
-        </div>
-        
-        <h1 className={globalStyles.title} style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto 2rem auto', width: '100%' }}>
+        <Link href="/" className={globalStyles.backButton}>
+          ← Back to Dashboard
+        </Link>
+      </div>
+
+      <header className={styles.header}>
+        <h1 className={globalStyles.title} style={{ fontSize: '3.5rem' }}>
           Season Circuits
         </h1>
+      </header>
+
+      <main className={styles.content}>
         
         <div className={styles.grid}>
           {uniqueRaces.map((race: any) => (
