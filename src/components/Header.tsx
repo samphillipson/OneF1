@@ -1,10 +1,11 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import SignOutButton from "./SignOutButton";
 import styles from "../app/page.module.css";
 import { Session } from "next-auth";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, Menu, X } from "lucide-react";
 import { useCart } from "./CartContext";
 
 interface HeaderProps {
@@ -15,6 +16,7 @@ export default function Header({ session }: HeaderProps) {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const { items } = useCart();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -88,6 +90,54 @@ export default function Header({ session }: HeaderProps) {
           <Link href="/login" className={styles.loginBtn}>Login</Link>
         )}
       </nav>
+
+      <button 
+        className={styles.mobileMenuBtn} 
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        aria-label="Toggle navigation menu"
+      >
+        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      {isMenuOpen && (
+        <div className={styles.mobileOverlay} onClick={() => setIsMenuOpen(false)} />
+      )}
+      
+      <div className={`${styles.mobileDrawer} ${isMenuOpen ? styles.mobileDrawerOpen : ""}`}>
+        <nav className={styles.mobileNav}>
+          <Link href="/" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>Dashboard</Link>
+          <Link href="/drivers" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>Drivers</Link>
+          <Link href="/circuits" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>Circuits</Link>
+          <Link href="/analytics" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>Analytics</Link>
+          <Link href="/tickets" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>Tickets</Link>
+          <Link href="/orders" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>Orders</Link>
+          <Link href="/#chat" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>AI Assistant</Link>
+          <Link href="/account" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>Account</Link>
+          <Link href="/cart" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <ShoppingCart size={18} />
+            <span>Cart</span>
+            {items.length > 0 && (
+              <span style={{ 
+                background: 'var(--f1-red)', 
+                color: 'white', 
+                fontSize: '0.75rem', 
+                padding: '2px 6px', 
+                borderRadius: '10px',
+                fontWeight: 'bold'
+              }}>
+                {items.reduce((total, item) => total + item.quantity, 0)}
+              </span>
+            )}
+          </Link>
+          <div className={styles.mobileAuthContainer} onClick={() => setIsMenuOpen(false)}>
+            {session ? (
+              <SignOutButton />
+            ) : (
+              <Link href="/login" className={styles.mobileLoginBtn}>Login</Link>
+            )}
+          </div>
+        </nav>
+      </div>
     </header>
   );
 }

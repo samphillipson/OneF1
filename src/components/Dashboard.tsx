@@ -82,6 +82,21 @@ export default function Dashboard() {
     'cadillac': '#FFD700'
   };
 
+  const teamLogos: Record<string, string> = {
+    'red_bull': 'https://media.formula1.com/image/upload/c_lfill,w_150/q_auto/v1740000001/common/f1/2026/redbullracing/2026redbullracinglogowhite.webp',
+    'mercedes': 'https://media.formula1.com/image/upload/c_lfill,w_150/q_auto/v1740000001/common/f1/2026/mercedes/2026mercedeslogowhite.webp',
+    'ferrari': 'https://media.formula1.com/image/upload/c_lfill,w_150/q_auto/v1740000001/common/f1/2026/ferrari/2026ferrarilogowhite.webp',
+    'mclaren': 'https://media.formula1.com/image/upload/c_lfill,w_150/q_auto/v1740000001/common/f1/2026/mclaren/2026mclarenlogowhite.webp',
+    'aston_martin': 'https://media.formula1.com/image/upload/c_lfill,w_150/q_auto/v1740000001/common/f1/2026/astonmartin/2026astonmartinlogowhite.webp',
+    'alpine': 'https://media.formula1.com/image/upload/c_lfill,w_150/q_auto/v1740000001/common/f1/2026/alpine/2026alpinelogowhite.webp',
+    'haas': 'https://media.formula1.com/image/upload/c_lfill,w_150/q_auto/v1740000001/common/f1/2026/haasf1team/2026haasf1teamlogowhite.webp',
+    'williams': 'https://media.formula1.com/image/upload/c_lfill,w_150/q_auto/v1740000001/common/f1/2026/williams/2026williamslogowhite.webp',
+    'rb': 'https://media.formula1.com/image/upload/c_lfill,w_150/q_auto/v1740000001/common/f1/2026/racingbulls/2026racingbullslogowhite.webp',
+    'sauber': 'https://media.formula1.com/image/upload/c_lfill,w_150/q_auto/v1740000001/common/f1/2026/audi/2026audilogowhite.webp',
+    'audi': 'https://media.formula1.com/image/upload/c_lfill,w_150/q_auto/v1740000001/common/f1/2026/audi/2026audilogowhite.webp',
+    'cadillac': 'https://media.formula1.com/image/upload/c_lfill,w_150/q_auto/v1740000001/common/f1/2026/cadillac/2026cadillaclogowhite.webp'
+  };
+
   return (
     <section id="dashboard" className={styles.dashboard}>
       <div className={styles.sectionHeader}>
@@ -150,6 +165,7 @@ export default function Dashboard() {
                 const teamId = showConstructors ? item.Constructor.constructorId : item.Constructors[0]?.constructorId;
                 const teamColor = teamColors[teamId] || 'var(--f1-red)';
                 const name = showConstructors ? item.Constructor.name : `${item.Driver.givenName} ${item.Driver.familyName}`;
+                const logoUrl = teamLogos[teamId];
 
                 return (
                   <li 
@@ -158,6 +174,16 @@ export default function Dashboard() {
                     style={{ '--team-color': teamColor } as any}
                   >
                     <div className={styles.teamAccent}></div>
+                    <div className={styles.logoContainer}>
+                      {logoUrl && (
+                        <img 
+                          src={logoUrl} 
+                          alt="" 
+                          className={styles.teamLogo} 
+                          referrerPolicy="no-referrer"
+                        />
+                      )}
+                    </div>
                     <span className={styles.position}>{idx + 1}</span>
                     <span className={styles.name}>{name}</span>
                     <span className={styles.points}>{item.points} pts</span>
@@ -176,15 +202,35 @@ export default function Dashboard() {
           ) : lastRace ? (
             <div className={styles.nextRaceInfo}>
               <h4 className={styles.raceTitle}>{lastRace.raceName}</h4>
+              <p><strong>Date:</strong> {new Date(lastRace.date).toLocaleDateString()}</p>
+              <p><strong>Circuit:</strong> {lastRace.Circuit.circuitName}</p>
+              <p><strong>Location:</strong> {lastRace.Circuit.Location.locality}, {lastRace.Circuit.Location.country}</p>
+              <div style={{ marginTop: '1.5rem', marginBottom: '0.8rem' }}>
+                <strong style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Podium Finishers</strong>
+              </div>
               <ul className={styles.standingsList}>
-                {lastRace.Results.slice(0, 3).map((res: any, idx: number) => (
-                  <li key={idx} className={styles.driverItem} style={{'--team-color': teamColors[res.Constructor.constructorId]} as any}>
-                    <div className={styles.teamAccent}></div>
-                    <span className={styles.position}>{res.position}</span>
-                    <span className={styles.name}>{res.Driver.familyName}</span>
-                    <span className={styles.points}>{res.Time?.time || "Finished"}</span>
-                  </li>
-                ))}
+                {lastRace.Results.slice(0, 3).map((res: any, idx: number) => {
+                  const teamId = res.Constructor.constructorId;
+                  const logoUrl = teamLogos[teamId];
+                  return (
+                    <li key={idx} className={styles.driverItem} style={{'--team-color': teamColors[teamId]} as any}>
+                      <div className={styles.teamAccent}></div>
+                      <div className={styles.logoContainer}>
+                        {logoUrl && (
+                          <img 
+                            src={logoUrl} 
+                            alt="" 
+                            className={styles.teamLogo} 
+                            referrerPolicy="no-referrer"
+                          />
+                        )}
+                      </div>
+                      <span className={styles.position}>{res.position}</span>
+                      <span className={styles.name}>{res.Driver.familyName}</span>
+                      <span className={styles.points}>{res.Time?.time || "Finished"}</span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ) : (

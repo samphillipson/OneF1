@@ -309,3 +309,50 @@
   transform: translateY(-2px);
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+  .header {
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    padding: 1.5rem;
+  }
+  .raceHeader {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+  }
+  .ticketGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .ticketCard {
+    padding: 1.5rem;
+  }
+  .ticketTier {
+    font-size: 1.4rem;
+  }
+  .ticketPrice {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .coordBox {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    width: 100%;
+  }
+}
+

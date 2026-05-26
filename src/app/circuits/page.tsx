@@ -34,7 +34,7 @@ export default async function CircuitsPage() {
       </div>
 
       <header className={styles.header}>
-        <h1 className={globalStyles.title} style={{ fontSize: '3.5rem' }}>
+        <h1 className={globalStyles.title}>
           Season Circuits
         </h1>
       </header>

@@ -245,14 +245,127 @@
   color: var(--f1-white);
 }
 
-@media (max-width: 768px) {
+/* Desktop styles for mobile elements (hidden by default) */
+.mobileMenuBtn {
+  display: none;
+}
+
+.mobileDrawer {
+  display: none;
+}
+
+@media (max-width: 1024px) {
   .header {
     padding: 1rem 1.5rem;
   }
   .nav {
     display: none;
   }
+  .headerBadge {
+    display: none;
+  }
+  .logo {
+    font-size: 2rem;
+  }
+  .mobileMenuBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--f1-white);
+    cursor: pointer;
+    z-index: 110;
+    transition: var(--transition);
+  }
+  .mobileMenuBtn:hover {
+    color: var(--f1-red);
+  }
+  .mobileOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 101;
+  }
+  .mobileDrawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background: rgba(17, 17, 17, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid var(--glass-border);
+    padding: 6rem 2rem 2rem 2rem;
+    z-index: 105;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+  }
+  .mobileDrawerOpen {
+    transform: translateX(0);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  }
+  .mobileNav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .mobileNavLink {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+  }
+  .mobileNavLink:hover {
+    color: var(--f1-red);
+    transform: translateX(5px);
+  }
+  .mobileAuthContainer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+  .mobileLoginBtn {
+    display: block;
+    background: var(--f1-red);
+    color: var(--f1-white);
+    padding: 0.8rem;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: var(--transition);
+  }
+  .mobileLoginBtn:hover {
+    background: #b30500;
+  }
+  .main {
+    padding: 2.5rem 1.5rem;
+    gap: 3.5rem;
+  }
+  .hero {
+    padding: 2rem 0;
+  }
   .title {
-    font-size: 3rem;
+    font-size: 2.2rem;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  .footer {
+    padding: 3rem 1.5rem;
+    margin-top: 4rem;
   }
 }

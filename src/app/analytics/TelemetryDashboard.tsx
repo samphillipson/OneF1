@@ -92,7 +92,7 @@ export default function TelemetryDashboard() {
         <h3 className={styles.chartTitle} style={{ marginBottom: '1.5rem', fontSize: '1.2rem' }}>
           Telemetry Configuration
         </h3>
-        <form onSubmit={fetchTelemetry} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'flex-end' }}>
+        <form onSubmit={fetchTelemetry} className={styles.configForm} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'flex-end' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: '1 1 100px' }}>
             <label style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase' }}>Year</label>
             <select 
@@ -169,7 +169,7 @@ export default function TelemetryDashboard() {
           </button>
         </form>
 
-        <div style={{ display: 'flex', gap: '1.5rem', marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+        <div className={styles.checkboxContainer} style={{ display: 'flex', gap: '1.5rem', marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
           <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
             <input 
               type="checkbox" 

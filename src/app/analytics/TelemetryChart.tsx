@@ -120,7 +120,7 @@ export default function TelemetryChart({ data1, data2, showThrottle, showBrake, 
             Displaying full telemetry data for the absolute fastest lap recorded by the driver(s) during this session.
           </p>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', textAlign: 'right', background: 'rgba(0,0,0,0.3)', padding: '1rem', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className={styles.chartStatsBox} style={{ display: 'flex', flexDirection: 'column', gap: '8px', textAlign: 'right', background: 'rgba(0,0,0,0.3)', padding: '1rem', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'flex-end' }}>
             <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Fastest Lap</span>
             <span style={{ color: c1, fontWeight: 'bold', fontSize: '1.2rem', fontFamily: 'monospace' }}>

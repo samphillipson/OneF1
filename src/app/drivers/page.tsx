@@ -47,7 +47,7 @@ export default async function DriversPage() {
       </div>
 
       <header className={styles.header}>
-        <h1 className={globalStyles.title} style={{ fontSize: '3.5rem' }}>Grid Breakdown</h1>
+        <h1 className={styles.title}>Grid Breakdown</h1>
       </header>
 
       <main className={styles.content}>

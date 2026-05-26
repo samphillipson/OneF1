@@ -65,3 +65,23 @@
   text-align: center;
   color: #ff4444;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .box {
+    padding: 1.5rem 1rem;
+  }
+  .totalRow {
+    font-size: 1.2rem;
+  }
+  .submitBtn {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+  }
+}

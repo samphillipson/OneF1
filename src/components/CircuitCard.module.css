@@ -124,3 +124,21 @@
   font-weight: 700;
   color: rgba(255, 255, 255, 0.9);
 }
+
+@media (max-width: 768px) {
+  .card {
+    min-height: 350px;
+  }
+  .circuitName {
+    font-size: 1.4rem;
+  }
+  .content {
+    padding: 15px;
+  }
+  .footer {
+    padding: 12px 20px;
+  }
+  .statValue {
+    font-size: 0.85rem;
+  }
+}
