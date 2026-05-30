@@ -185,16 +185,16 @@ export default function TelemetryChart({ data1, data2, showThrottle, showBrake, 
             <Legend wrapperStyle={{ paddingTop: '20px' }} />
             
             {/* Driver 1 */}
-            <Line yAxisId="speed" type="monotone" dataKey="speed" name={`${data1.name} Speed`} stroke={c1} strokeWidth={2} dot={false} activeDot={{ r: 6 }} />
-            {showThrottle && <Line yAxisId="throttle" type="monotone" dataKey="throttle" name={`${data1.name} Throttle %`} stroke={c1} strokeWidth={2} dot={false} strokeDasharray="8 6" />}
-            {showBrake && <Line yAxisId="brake" type="stepAfter" dataKey="brake" name={`${data1.name} Brake`} stroke={c1} strokeWidth={2} dot={false} strokeDasharray="8 6" />}
+            <Line yAxisId="speed" type="monotone" dataKey="speed" name={`${data1.name} Speed`} stroke={c1} strokeWidth={2} dot={false} activeDot={{ r: 6 }} legendType="plainline" />
+            {showThrottle && <Line yAxisId="throttle" type="monotone" dataKey="throttle" name={`${data1.name} Throttle %`} stroke={c1} strokeWidth={2} dot={false} strokeDasharray="8 6" legendType="plainline" />}
+            {showBrake && <Line yAxisId="brake" type="stepAfter" dataKey="brake" name={`${data1.name} Brake`} stroke={c1} strokeWidth={2} dot={false} strokeDasharray="8 6" legendType="plainline" />}
             
             {/* Driver 2 */}
             {hasDriver2 && (
               <>
-                <Line yAxisId="speed" type="monotone" dataKey="speed2" name={`${data2!.name} Speed`} stroke={c2} strokeWidth={2} dot={false} activeDot={{ r: 6 }} />
-                {showThrottle && <Line yAxisId="throttle" type="monotone" dataKey="throttle2" name={`${data2!.name} Throttle %`} stroke={c2} strokeWidth={2} dot={false} strokeDasharray="8 6" opacity={0.6} />}
-                {showBrake && <Line yAxisId="brake" type="stepAfter" dataKey="brake2" name={`${data2!.name} Brake`} stroke={c2} strokeWidth={2} dot={false} strokeDasharray="8 6" opacity={0.6} />}
+                <Line yAxisId="speed" type="monotone" dataKey="speed2" name={`${data2!.name} Speed`} stroke={c2} strokeWidth={2} dot={false} activeDot={{ r: 6 }} legendType="plainline" />
+                {showThrottle && <Line yAxisId="throttle" type="monotone" dataKey="throttle2" name={`${data2!.name} Throttle %`} stroke={c2} strokeWidth={2} dot={false} strokeDasharray="8 6" opacity={0.6} legendType="plainline" />}
+                {showBrake && <Line yAxisId="brake" type="stepAfter" dataKey="brake2" name={`${data2!.name} Brake`} stroke={c2} strokeWidth={2} dot={false} strokeDasharray="8 6" opacity={0.6} legendType="plainline" />}
               </>
             )}
           </LineChart>
