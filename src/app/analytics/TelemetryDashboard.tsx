@@ -1,14 +1,42 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TelemetryChart from './TelemetryChart';
 import RaceEngineerInsights from './RaceEngineerInsights';
 import styles from './telemetry.module.css';
 
-const DRIVERS = [
-  'VER', 'PER', 'HAM', 'RUS', 'LEC', 'SAI', 'NOR', 'PIA',
-  'ALO', 'STR', 'GAS', 'OCO', 'ALB', 'SAR', 'TSU', 'RIC',
-  'BOT', 'ZHO', 'MAG', 'HUL'
+interface DriverOption {
+  code: string;
+  name: string;
+}
+
+const INITIAL_DRIVERS: DriverOption[] = [
+  { code: 'VER', name: 'Max Verstappen' },
+  { code: 'PER', name: 'Sergio Pérez' },
+  { code: 'HAM', name: 'Lewis Hamilton' },
+  { code: 'RUS', name: 'George Russell' },
+  { code: 'LEC', name: 'Charles Leclerc' },
+  { code: 'SAI', name: 'Carlos Sainz' },
+  { code: 'NOR', name: 'Lando Norris' },
+  { code: 'PIA', name: 'Oscar Piastri' },
+  { code: 'ALO', name: 'Fernando Alonso' },
+  { code: 'STR', name: 'Lance Stroll' },
+  { code: 'GAS', name: 'Pierre Gasly' },
+  { code: 'OCO', name: 'Esteban Ocon' },
+  { code: 'ALB', name: 'Alexander Albon' },
+  { code: 'TSU', name: 'Yuki Tsunoda' },
+  { code: 'HUL', name: 'Nico Hülkenberg' },
+  { code: 'ANT', name: 'Andrea Kimi Antonelli' },
+  { code: 'BEA', name: 'Oliver Bearman' },
+  { code: 'BOR', name: 'Gabriel Bortoleto' },
+  { code: 'COL', name: 'Franco Colapinto' },
+  { code: 'LAW', name: 'Liam Lawson' },
+  { code: 'DOO', name: 'Jack Doohan' },
+  { code: 'MAG', name: 'Kevin Magnussen' },
+  { code: 'BOT', name: 'Valtteri Bottas' },
+  { code: 'ZHO', name: 'Guanyu Zhou' },
+  { code: 'SAR', name: 'Logan Sargeant' },
+  { code: 'RIC', name: 'Daniel Ricciardo' }
 ];
 
 const SESSIONS = [
@@ -29,11 +57,12 @@ const RACES = [
 ];
 
 export default function TelemetryDashboard() {
-  const [year, setYear] = useState('2024');
+  const [year, setYear] = useState('2026');
   const [race, setRace] = useState('Bahrain');
   const [session, setSession] = useState('R');
   const [driver, setDriver] = useState('VER');
   const [driver2, setDriver2] = useState('None');
+  const [drivers, setDrivers] = useState<DriverOption[]>(INITIAL_DRIVERS);
   
   const [showThrottle, setShowThrottle] = useState(false);
   const [showBrake, setShowBrake] = useState(false);
@@ -41,6 +70,39 @@ export default function TelemetryDashboard() {
   const [telemetryData, setTelemetryData] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Dynamically load driver grid for the selected year
+  useEffect(() => {
+    async function fetchDrivers() {
+      try {
+        const res = await fetch(`https://api.jolpi.ca/ergast/f1/${year}/drivers.json`);
+        if (!res.ok) throw new Error("Failed to fetch drivers");
+        const data = await res.json();
+        const driversList = data.MRData.DriverTable.Drivers.map((d: any) => ({
+          code: d.code || d.familyName.substring(0, 3).toUpperCase(),
+          name: `${d.givenName} ${d.familyName}`
+        })).sort((a: any, b: any) => a.code.localeCompare(b.code));
+        
+        if (driversList.length > 0) {
+          setDrivers(driversList);
+          
+          // Reset selections if the selected driver is not in the new grid
+          const codes = driversList.map((d: any) => d.code);
+          if (!codes.includes(driver)) {
+            setDriver(codes[0] || 'VER');
+          }
+          if (driver2 !== 'None' && !codes.includes(driver2)) {
+            setDriver2('None');
+          }
+        }
+      } catch (err) {
+        console.error("Error loading dynamic driver list:", err);
+        // Fallback to static list
+        setDrivers(INITIAL_DRIVERS);
+      }
+    }
+    fetchDrivers();
+  }, [year]);
 
   const fetchTelemetry = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -78,6 +140,12 @@ export default function TelemetryDashboard() {
       'TSU': '#6692FF', 'RIC': '#6692FF',
       'BOT': '#52E252', 'ZHO': '#52E252',
       'MAG': '#B6BABD', 'HUL': '#B6BABD',
+      'ANT': '#27F4D2', // Mercedes
+      'BEA': '#B6BABD', // Haas
+      'BOR': '#52E252', // Sauber / Audi
+      'COL': '#64C4FF', // Williams
+      'LAW': '#6692FF', // VCARB
+      'DOO': '#0093CC'  // Alpine
     };
     return map[driverCode] || 'white';
   };
@@ -100,7 +168,7 @@ export default function TelemetryDashboard() {
               onChange={(e) => setYear(e.target.value)}
               style={{ padding: '0.75rem', borderRadius: '6px', background: 'rgba(0,0,0,0.5)', color: 'white', border: '1px solid rgba(255,255,255,0.2)', outline: 'none' }}
             >
-              {[2024, 2023, 2022, 2021].map(y => <option key={y} value={y}>{y}</option>)}
+              {[2026, 2025, 2024, 2023, 2022, 2021].map(y => <option key={y} value={y}>{y}</option>)}
             </select>
           </div>
 
@@ -126,18 +194,18 @@ export default function TelemetryDashboard() {
             </select>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: '1 1 100px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: '1 1 150px' }}>
             <label style={{ fontSize: '0.85rem', color: driver1Color, fontWeight: 'bold', textTransform: 'uppercase' }}>Driver 1</label>
             <select 
               value={driver} 
               onChange={(e) => setDriver(e.target.value)}
               style={{ padding: '0.75rem', borderRadius: '6px', background: 'rgba(0,0,0,0.5)', color: 'white', border: `1px solid ${driver1Color}`, outline: 'none' }}
             >
-              {DRIVERS.map(d => <option key={d} value={d}>{d}</option>)}
+              {drivers.map(d => <option key={d.code} value={d.code}>{d.code} - {d.name}</option>)}
             </select>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: '1 1 100px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: '1 1 150px' }}>
             <label style={{ fontSize: '0.85rem', color: driver2Color, fontWeight: 'bold', textTransform: 'uppercase' }}>Driver 2</label>
             <select 
               value={driver2} 
@@ -145,7 +213,7 @@ export default function TelemetryDashboard() {
               style={{ padding: '0.75rem', borderRadius: '6px', background: 'rgba(0,0,0,0.5)', color: 'white', border: `1px solid ${driver2Color}`, outline: 'none' }}
             >
               <option value="None">None</option>
-              {DRIVERS.map(d => <option key={d} value={d}>{d}</option>)}
+              {drivers.map(d => <option key={d.code} value={d.code}>{d.code} - {d.name}</option>)}
             </select>
           </div>
 
