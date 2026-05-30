@@ -6,6 +6,7 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/auth";
 import Footer from "@/components/Footer";
 import { CartProvider } from "@/components/CartContext";
+import CookieBanner from "@/components/CookieBanner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,6 +31,7 @@ export default async function RootLayout({
             {children}
           </div>
           <Footer />
+          <CookieBanner />
         </CartProvider>
       </body>
     </html>

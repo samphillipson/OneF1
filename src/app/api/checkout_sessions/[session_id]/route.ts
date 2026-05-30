@@ -44,7 +44,7 @@ export async function GET(request: Request, { params }: { params: { session_id: 
           if (existingOrder.user && existingOrder.user.email) {
             try {
               const itemListHTML = existingOrder.items.map(item => 
-                `<li>${item.quantity}x ${item.ticketTier} Ticket - ${item.raceName} (Round ${item.raceRound}) - $${item.price.toLocaleString()}</li>`
+                `<li>${item.quantity}x ${item.ticketTier} Ticket - ${item.raceName} (Round ${item.raceRound}) - £${item.price.toLocaleString()}</li>`
               ).join('');
 
               await resend.emails.send({
@@ -59,7 +59,7 @@ export async function GET(request: Request, { params }: { params: { session_id: 
                   <ul>
                     ${itemListHTML}
                   </ul>
-                  <p><strong>Total Paid:</strong> $${existingOrder.totalAmount.toLocaleString()}</p>
+                  <p><strong>Total Paid:</strong> £${existingOrder.totalAmount.toLocaleString()}</p>
                   <br/>
                   <p>See you at the track!</p>
                 `
